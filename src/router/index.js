@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
+import AboutView from '../views/AboutView.vue'
+import HomeView from "../views/HomeView.vue"
+import ResourcesView from "../views/ResourcesView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: HomeView,
       meta: {
         title: 'Home Page - Example App',
         metaTags: [
@@ -26,7 +27,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: About,
+      component: AboutView,
       meta: {
         title: 'About Page - Example App',
         metaTags: [
@@ -37,6 +38,24 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'The about page of our example app.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/resources',
+      name:'resources',
+      component: ResourcesView,
+      meta: {
+        title: 'Resources Page - Example App',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'The resources page of our example app.'
+          },
+          {
+            property: 'og:description',
+            content: 'The resources page of our example app.'
           }
         ]
       },
