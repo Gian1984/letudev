@@ -91,6 +91,8 @@
 <script>
 import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/vue/outline'
 
+
+
 const supportLinks = [
   {
     name: 'Sales',
@@ -179,6 +181,7 @@ const perks = [
 ]
 
 export default {
+
   components:{
 
   },

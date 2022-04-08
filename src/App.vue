@@ -309,6 +309,7 @@ const navigation = {
 }
 
 export default {
+
   components: {
     ChevronDownIcon,
     Disclosure,

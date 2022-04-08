@@ -115,6 +115,7 @@ const people = [
 ]
 
 export default {
+
   setup() {
     return {
       people,
