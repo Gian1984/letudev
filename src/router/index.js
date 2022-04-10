@@ -130,7 +130,7 @@ const router = createRouter({
     },
     {
       path:'/chromeextensions',
-      name:'chartlibraries',
+      name:'chromeextensions',
       component: ChromeExtensions,
       meta: {
         title: 'Resources Chrome Extensions',
