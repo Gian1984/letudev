@@ -283,14 +283,20 @@ const resources = [
     name: 'Chrome Extensions',
     href:'/chromeextensions',
     desc:'Useful Chrome extensions for Designers and Web-Developers.',
-    bgColor:'bg-teal-500',},
+    bgColor:'bg-teal-500',
+  },
+  {
+    name: 'Public APIs',
+    href:'/publicapis',
+    desc:'A collective list of free APIs for use in software and web development.',
+    bgColor:'bg-rose-500',
+  },
   {
     name: 'Others',
     href:'/others',
     desc:'Uncategorized Stuff.',
     bgColor:'bg-amber-500',
   },
-
 ]
 
 export default {

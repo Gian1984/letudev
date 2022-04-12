@@ -5,8 +5,8 @@
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <img class="block lg:hidden h-8 w-auto" src="./assets/img/letudev_logo_mini.png" alt="letudev_logo" />
-              <img class="hidden lg:block h-8 w-auto" src="./assets/img/letudev_logo_mini.png" alt="letudev_logo" />
+              <router-link to="/"><img class="block lg:hidden h-8 w-auto" src="./assets/img/letudev_logo_mini.png" alt="letudev_logo" /></router-link>
+              <router-link to="/"><img class="hidden lg:block h-8 w-auto" src="./assets/img/letudev_logo_mini.png" alt="letudev_logo" /></router-link>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <!-- Current: "border-teal-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->

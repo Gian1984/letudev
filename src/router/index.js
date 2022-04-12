@@ -33,6 +33,8 @@ import UIGraphics from "../categories/UIGraphics.vue"
 import VectorsClip from "../categories/VectorsClip.vue"
 import VueUILibraries from "../categories/VueUILibraries.vue"
 import AnimationLibraries from "../categories/AnimationLibraries.vue"
+import PublicAPIs from "../categories/PublicAPIs.vue"
+
 
 
 const router = createRouter({
@@ -646,6 +648,24 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'Javascript animations libraries to build awesome animations for websites and applications.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/publicapis',
+      name:'publicapis',
+      component: PublicAPIs,
+      meta: {
+        title: 'Resources Public APIs',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs for use in software and web development.'
           }
         ]
       },

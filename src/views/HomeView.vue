@@ -1,195 +1,176 @@
 <template>
+  <header>
+    <div>
+      <div class="relative">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
+        <div class="mx-auto">
+          <div class="relative sm:overflow-hidden">
+            <div class="absolute inset-0">
+              <img class="h-full w-full object-cover" src="../assets/img/mesh.webp" alt="People working on laptops" />
+              <div class="absolute inset-0" />
+            </div>
+            <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+              <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                <span class="block text-white uppercase">Let U dev</span>
+                <span class="block text-teal-600">List of useful resources made for all web developers </span>
+              </h1>
+              <p class="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-600 sm:max-w-3xl">List of useful resources made for all web developers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main>
     <div class="bg-white">
-      <!-- Header -->
-      <div class="relative pb-32 bg-gray-800 sm:py-40">
-        <div class="absolute inset-0">
-          <img class="block lg:hidden w-full h-full object-cover" src="../assets/img/home_header.webp" alt="home_header_letudev.com" />
-          <img class="hidden lg:block w-full h-full object-cover" src="../assets/img/home_header_lg.webp" alt="home_header_letudev.com" />
-          <div class="absolute inset-0" aria-hidden="true" />
-        </div>
-        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"></div>
-      </div>
+      <div class="max-w-2xl mx-auto pt-12 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8">
 
-      <!-- Overlapping cards -->
-      <section class="-mt-32 max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8 mt-24" aria-labelledby="contact-heading">
-        <h2 class="sr-only" id="contact-heading">Contact us</h2>
-        <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-          <div v-for="link in supportLinks" :key="link.name" class="flex flex-col bg-white rounded-2xl shadow-xl">
-            <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-              <div class="absolute top-0 p-5 inline-block rounded-xl shadow-lg transform -translate-y-1/2">
-                <component :is="link.icon" class="h-5 w-5 text-orange-500" aria-hidden="true" />
-              </div>
-              <h3 class="text-md font-medium text-gray-900">{{ link.name }}</h3>
-              <p class="mt-4 text-sm text-gray-500">{{ link.description }}</p>
-            </div>
-            <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-              <a :href="link.href" class="text-sm font-medium text-orange-700 hover:text-orange-600">Contact us<span aria-hidden="true"> &rarr;</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
 
-    <section aria-labelledby="trending-heading">
-      <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 sm:py-32 lg:pt-32 lg:px-8">
-        <div class="md:flex md:items-center md:justify-between">
-          <h2 id="favorites-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Trending Products</h2>
-          <a href="#" class="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">Shop the collection<span aria-hidden="true"> &rarr;</span></a>
-        </div>
 
-        <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
-          <div v-for="product in trendingProducts" :key="product.id" class="group relative">
-            <div class="w-full h-56 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
-              <img :src="product.imageSrc" :alt="product.imageAlt" class="w-full h-full object-center object-cover" />
-            </div>
-            <h3 class="mt-4 text-sm text-gray-700">
-              <a :href="product.href">
-                <span class="absolute inset-0" />
-                {{ product.name }}
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
-            <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price }}</p>
-          </div>
-        </div>
-
-        <div class="mt-8 text-sm md:hidden">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Shop the collection<span aria-hidden="true"> &rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="perks-heading" class="bg-gray-50 border-t border-gray-200">
-      <h2 id="perks-heading" class="sr-only">Our perks</h2>
-
-      <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 sm:py-32 lg:px-8">
-        <div class="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
-          <div v-for="perk in perks" :key="perk.name" class="text-center md:flex md:items-start md:text-left lg:block lg:text-center">
-            <div class="md:flex-shrink-0">
-              <div class="flow-root">
-                <img class="-my-1 h-24 w-auto mx-auto" :src="perk.imageUrl" alt="" />
-              </div>
-            </div>
-            <div class="mt-6 md:mt-0 md:ml-4 lg:mt-6 lg:ml-0">
-              <h3 class="text-sm font-semibold tracking-wide uppercase text-gray-900">
-                {{ perk.name }}
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                {{ perk.description }}
+        <div class="bg-white">
+          <div class="max-w-2xl mx-auto py-6 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:py-6 lg:max-w-7xl lg:grid-cols-2">
+            <div>
+              <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Start where you are, use what you have, and do what you can.</h2>
+              <p class="mt-4 text-gray-500 text-sm sm:text-base ">
+                One of the important skills you need to learn as a Self-taught developer is to be resourceful, my father taught me this skill when I was still very young, and I didn’t know it would take me far in life, and I want you to do the same.<br><br>
+                <span class="font-bold text-orange-500">re-source-ful</span><br>
+                <i>— having the ability to find clever ways to overcome difficulties.</i><br><br>
+                Here are some important resources that every developer needs to know.
+                I am not affiliated with any of it, I am just using them personally and would want to share it with you, especially to all Self-taught developer.<br>
+                It is important for us developers to always be learning, to always be updated, and to continue to grow to become the best developer that we can be.<br>
+                Junior developers nowadays are lucky to have a lot of resources available online, you just have to be patient enough to find them. When I started four years ago, I didn’t even know any self-taught developer at that time, I didn’t know how to do it.
+                I didn’t even know if it was possible until I made myself one.<br>
+                So be resourceful and take advantage to all of it, you don’t have to spend so much just to learn, to be honest, you just have to be smart and be resourceful.
               </p>
             </div>
+            <div class="hidden sm:block ">
+              <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img src="../assets/img/father.webp" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/goals.webp" alt="Top down view of walnut card tray with embedded magnets and card groove." class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/developer.webp" alt="Side of walnut card tray with card groove and recessed card area." class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/idea.webp" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="bg-gray-100 rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <router-link to="/resources" class="sm:mt-16 hidden text-sm font-semibold text-orange-600 hover:text-orange-500 sm:block">Browse all resources<span aria-hidden="true"> &rarr;</span></router-link>
+        <div class="mt-2 grid items-start grid-cols-1 gap-y-16 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+          <div v-for="feature in features" :key="feature.name" class="flex flex-col-reverse">
+            <router-link :to="feature.href">
+              <div class="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden">
+                <img :src="feature.imageSrc" :alt="feature.imageAlt" class="object-center object-cover" />
+              </div>
+              <div class="mt-2 flex">
+                <router-link :to="feature.href" class="bg-teal-500 hover:bg-teal-700 text-white text-sm py-1 px-2 rounded-full flex">
+                  discover
+                  <ChevronRightIcon class=" h-5 w-5" aria-hidden="true" />
+                </router-link>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-sm font-medium text-gray-900">{{ feature.name }}</h3>
+                <p class="mt-2 text-sm text-gray-500">{{ feature.description }}</p>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="bg-white">
+      <div class="max-w-2xl mx-auto pt-12 px-4 sm:px-6 sm:pt-24 lg:max-w-7xl lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Protect your device</h2>
+          <p class="mt-4 text-gray-500">As a digital creative, your laptop or tablet is at the center of your work. Keep your device safe with a fabric sleeve that matches in quality and looks.</p>
+        </div>
+
+        <div class="mt-16 space-y-16">
+          <div v-for="(feature, featureIdx) in featuress" :key="feature.name" class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-center">
+            <div :class="[featureIdx % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-8 xl:col-start-9', 'mt-6 lg:mt-0 lg:row-start-1 lg:col-span-5 xl:col-span-4']">
+              <h3 class="text-lg font-medium text-gray-900">{{ feature.name }}</h3>
+              <p class="mt-2 text-sm text-gray-500">{{ feature.description }}</p>
+            </div>
+            <div :class="[featureIdx % 2 === 0 ? 'lg:col-start-6 xl:col-start-5' : 'lg:col-start-1', 'flex-auto lg:row-start-1 lg:col-span-7 xl:col-span-8']">
+              <div class="aspect-w-5 aspect-h-2 rounded-lg bg-gray-100 overflow-hidden">
+                <img :src="feature.imageSrc" :alt="feature.imageAlt" class="object-center object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
 </template>
 
 <script>
-import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/vue/outline'
+import { ChevronRightIcon } from '@heroicons/vue/solid'
 
 
-
-const supportLinks = [
+const featuress = [
   {
-    name: 'Sales',
-    href: '#',
+    name: 'Minimal and thoughtful',
     description:
-        'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
-    icon: PhoneIcon,
+        'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
+    imageSrc: new URL('../assets/img/development.webp', import.meta.url).href,
+    imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
   },
   {
-    name: 'Technical Support',
-    href: '#',
+    name: 'Refined details',
     description:
-        'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
-    icon: SupportIcon,
-  },
-  {
-    name: 'Media Inquiries',
-    href: '#',
-    description:
-        'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
-    icon: NewspaperIcon,
+        'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
+    imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },
 ]
 
-const trendingProducts = [
+const features = [
   {
-    id: 1,
-    name: 'Leather Long Wallet',
-    color: 'Natural',
-    price: '$75',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-    imageAlt: 'Hand stitched, orange leather long wallet.',
+    name: 'Public APIs',
+    description: 'Looking for one that fits your needs can be incredibly time-consuming. Here A collective list of free APIs for use in software and web development.',
+    imageSrc: new URL('../assets/img/development.webp', import.meta.url).href,
+    imageAlt: 'Green cardstock box containing white, beige, and brown cards.',
+    href:'',
   },
   {
-    id: 1,
-    name: 'Leather Long Wallet',
-    color: 'Natural',
-    price: '$75',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-    imageAlt: 'Hand stitched, orange leather long wallet.',
+    name: 'UI Graphics',
+    description: 'Websites and resources with modern UI components in different formats such as PSD, Sketch, Figma, etc. They are great for ideas for web components/UI.',
+    imageSrc: new URL('../assets/img/designing.webp', import.meta.url).href,
+    imageAlt: 'Green cardstock box open with 50 cards inside.',
+    href:'/uigraphics',
   },
   {
-    id: 1,
-    name: 'Leather Long Wallet',
-    color: 'Natural',
-    price: '$75',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-    imageAlt: 'Hand stitched, orange leather long wallet.',
+    name: 'CSS/UI frameworks',
+    description: 'CSS/UI frameworks to help build great looking websites and applications such as Tailwind CSS, Materialize, Bulma and others.',
+    imageSrc: new URL('../assets/img/loading.webp', import.meta.url).href,
+    imageAlt: 'CSS/UI frameworks to help build great looking websites and applications',
+    href:'/cssframeworks',
   },
   {
-    id: 1,
-    name: 'Leather Long Wallet',
-    color: 'Natural',
-    price: '$75',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg',
-    imageAlt: 'Hand stitched, orange leather long wallet.',
-  },
-  // More products...
-]
-const perks = [
-  {
-    name: 'Free returns',
-    imageUrl: 'https://tailwindui.com/img/ecommerce/icons/icon-returns-light.svg',
-    description: 'Not what you expected? Place it back in the parcel and attach the pre-paid postage stamp.',
-  },
-  {
-    name: 'Same day delivery',
-    imageUrl: 'https://tailwindui.com/img/ecommerce/icons/icon-calendar-light.svg',
-    description:
-        'We offer a delivery service that has never been done before. Checkout today and receive your products within hours.',
-  },
-  {
-    name: 'All year discount',
-    imageUrl: 'https://tailwindui.com/img/ecommerce/icons/icon-gift-card-light.svg',
-    description: 'Looking for a deal? You can use the code "ALLYEAR" at checkout and get money off all year round.',
-  },
-  {
-    name: 'For the planet',
-    imageUrl: 'https://tailwindui.com/img/ecommerce/icons/icon-planet-light.svg',
-    description: 'We’ve pledged 1% of sales to the preservation and restoration of the natural environment.',
+    name: 'Javascript Chart Libraries',
+    description: 'Libraries that help developers visualize data into charts such as ChartJS, FrappeJS and others.',
+    imageSrc: new URL('../assets/img/improved.webp', import.meta.url).href,
+    imageAlt: 'Libraries that help developers visualize data into charts such as ChartJS, FrappeJS and others.',
+    href:'/chartlibraries',
   },
 ]
+
+
 
 export default {
 
   components:{
-
+    ChevronRightIcon
   },
 
   setup() {
-
     return {
-      supportLinks,
-      trendingProducts,
-      perks,
+      features,
+      featuress,
     }
   },
 }
