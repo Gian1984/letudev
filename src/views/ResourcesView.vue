@@ -1,9 +1,92 @@
 <template>
-  <main class="-mt-32 max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8 mt-24 mb-10">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <header>
+    <div>
+      <div>
+        <img class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="header_res" />
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        <div>
+          <div>
+            <nav class="sm:hidden" aria-label="Back">
+              <router-link to="/" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">
+                <ChevronLeftIcon class="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                Home
+              </router-link>
+            </nav>
+            <nav class="hidden sm:flex" aria-label="Breadcrumb">
+              <ol role="list" class="flex items-center space-x-4">
+                <li>
+                  <div class="flex">
+                    <router-link to="/" class="text-sm font-medium text-gray-500 hover:text-gray-700">Home</router-link>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <ChevronRightIcon class="flex-shrink-0 h-4 w-4 text-gray-400" aria-hidden="true" />
+                    <router-link to="/resources" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Resources</router-link>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="mt-2 md:flex md:items-center md:justify-between">
+            <div class="flex-1 min-w-0">
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Resources</h2>
+              <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
+                <div class="mt-2 flex text-sm text-gray-500">
+                  <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                  Last update - March 9, 2022
+                </div>
+              </div>
+            </div>
+            <!--            <div class="mt-4 flex-shrink-0 flex md:mt-0 md:ml-4">-->
+            <!--              <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button>-->
+            <!--              <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>-->
+            <!--            </div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="-mt-30 max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8 mt-24 mb-10">
+    <div>
+      <label for="name" class="mt-5 block text-sm font-medium text-gray-700">
+        Find your resource
+      </label>
+      <input type="search" v-model="searchQuery" name="name" id="name"  class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="Enter a search here!" />
+    </div>
+
+    <div>
+      <p class="mb-2 text-right" v-if="searchQuery && filterResources.length > 1 ">{{filterResources.length}} results</p>
+      <div v-if="!searchQuery"></div>
+      <div v-else class="border-2 border-orange-300 rounded-2xl mt-2">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 py-2 px-2">
+          <div v-for="resource in filterResources" :key="resource.name" class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-teal-500">
+            <div class="flex-shrink-0">
+              <span :class="[resource.bgColor, 'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white']"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <router-link :to="resource.href" class="focus:outline-none">
+                <span class="absolute inset-0" aria-hidden="true" />
+                <p class="text-sm font-medium text-gray-900">
+                  {{ resource.name }}
+                </p>
+                <p class="text-sm text-gray-500 truncate">
+                  {{ resource.desc }}
+                </p>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-10 text-gray-500 text-xs font-medium uppercase tracking-wide">Pinned Resources</h2>
+    <div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div v-for="(resource, index) in resources" :key="index" class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-teal-500">
         <div class="flex-shrink-0">
-          <img class="h-10 w-10 rounded-full" :src="resource.imageUrl" alt="" />
+          <span :class="[resource.bgColor, 'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white']"></span>
         </div>
         <div class="flex-1 min-w-0">
           <router-link :to="resource.href" class="focus:outline-none">
@@ -22,228 +105,221 @@
 </template>
 
 <script>
+import { ChevronLeftIcon, ChevronRightIcon, CalendarIcon } from '@heroicons/vue/outline'
+
 const resources = [
   {
     name: 'UI Graphics',
     href:'/uigraphics',
     desc:'Websites and resources with modern UI components in different formats such as PSD, Sketch, Figma, etc. They are great for ideas for web components/UI.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-orange-500',
   },
   {
     name: 'Fonts',
     href:'/fonts',
     desc:'Websites that offer free fonts as well as font-based tools.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-pink-600',
   },
   {
     name: 'Colors',
     href:'/colors',
     desc:'Websites and resources that help with choices related to colors.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-purple-600',
   },
   {
     name: 'Icons',
     href:'/icons',
     desc:'Resources for Icons including png, svg and more.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-green-500',
   },
   {
     name: 'Logos',
     href:'/logos',
     desc:'Resources Logos',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
+    bgColor:'bg-sky-500',},
   {
     name: 'Favicons',
     href:'/favicons',
     desc:'Resources Favicons.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-amber-500',
   },
   {
     name: 'Icon Fonts',
     href:'/iconfonts',
     desc:'Resources Icon Fonts',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-teal-500',
   },
   {
     name: 'Stock Photos',
     href:'/stockphotos',
     desc:'Websites that offer free stock photos of all kinds for your websites and apps.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-yellow-500',
   },
   {
     name: 'Stock Videos',
     href:'/stockvideos',
     desc:'Websites that offer free stock videos of all kinds for your websites and apps.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-emerald-500',
   },
   {
     name: 'Stock Music & Sound Effects',
     href:'/soundeffects',
     desc:'Websites that offer free stock music and/or sound effects.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-blue-500',
   },
   {
     name: 'Vectors & Clip Art',
     href:'/vectorsclip',
     desc:'Free vectors, clipart, illustrations, patterns and more.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-red-500',
   },
   {
     name: 'Product & Image Mockups',
     href:'/imagemockups',
     desc:'Create mockups of devices and other products.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-orange-500',
   },
   {
     name: 'HTML & CSS Templates',
     href:'/html&csstemplates',
     desc:'Websites that offer free beautiful website templates and themes of all types.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-pink-600',
   },
   {
     name: 'CSS Frameworks',
     href:'/cssframeworks',
     desc:'CSS/UI frameworks to help build great looking websites and applications.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
+    bgColor:'bg-purple-600',},
   {
     name: 'CSS Methodologies',
     href:'/cssmethodologies',
     desc:'CSS methodologies to help write modular, reusable and scalable code.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-emerald-500',
   },
   {
     name: 'CSS Animations',
     href:'/cssanimations',
     desc:'CSS animations to build awesome animations for websites and applications.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-sky-500',
   },
   {
     name: 'Javascript Animation Libraries',
     href:'/animationlibraries',
     desc:'Javascript animations libraries to build awesome animations for websites and applications.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-amber-500',
   },
   {
     name: 'Javascript Chart Libraries',
     href:'/chartlibraries',
     desc:'Libraries that help developers visualize data into charts.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-teal-500',
   },
   {
     name: 'UI Components & Kits',
     href:'/uicomponents',
     desc:'Not quite "frameworks", but tools for creating user interfaces with components or UI kits',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-blue-500',
   },
   {
     name: 'React UI Libraries',
     href:'/reactuilibraries',
     desc:'UI and component libraries for the React JavaScript framework.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-yellow-500',
   },
   {
     name: 'Vue UI Libraries',
     href:'/vueuilibraries',
     desc:'UI and component libraries for the Vue JavaScript framework.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-cyan-500',
   },
   {
     name: 'Angular UI Libraries',
     href:'/angularuilibraries',
     desc:'UI and component libraries for the Angular JavaScript framework.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-rose-500',
   },
   {
     name: 'Svelte UI Libraries',
     href:'/svelteuilibraries',
     desc:'UI and component libraries for the Svelte JavaScript compiler.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-emerald-500',
   },
   {
     name: 'React Native UI Libraries',
     href:'/reactnativeuilibraries',
     desc:'UI and component libraries for the React Native Framework.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-orange-500',
   },
   {
     name: 'Design Systems & Style Guides',
     href:'/designsystems',
     desc:'Design systems, style guides, toolkits, docs. Some of these are design guides for top companies/websites.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-indigo-500',
   },
   {
     name: 'Online Design Tools',
     href:'/onlinedesigntools',
     desc:'All kinds of online tools for design, from photo editors to wireframing, and more.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-purple-600',
   },
   {
     name: 'Downloadable Design Software',
     href:'/designsoftware',
     desc:'Free software for UI, photo, 3d modeling, etc. Alternatives to paid software like Photoshop.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-green-500',
   },
   {
     name: 'Design Inspiration',
     href:'/designinspiration',
     desc:'Here are some websites to get inspiration for design and UI.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
+    bgColor:'bg-blue-900',},
   {
     name: 'Image Compression',
     href:'/imagecompression',
     desc:'Websites that allow you to compress large images.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-red-500',
   },
   {
     name: 'Chrome Extensions',
     href:'/chromeextensions',
     desc:'Useful Chrome extensions for Designers and Web-Developers.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
+    bgColor:'bg-teal-500',},
   {
     name: 'Others',
     href:'/others',
     desc:'Uncategorized Stuff.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    bgColor:'bg-amber-500',
   },
 
 ]
 
 export default {
+  computed: {
+    filterResources() {
+      return this.resources.filter(result => {
+        const myRegex = new RegExp(this.searchQuery, 'gi');
+        let resultFacet = this.facet;
+        if (resultFacet.length == 0) {
+          return (result.name.match(myRegex) || result.name.match(myRegex))
+        }
+        return (result.name.match(myRegex) || result.name.match(myRegex)) && (resultFacet.includes(result.id));
+      })
+    },
+  },
+
+  data(){
+    return{
+      facet: [],
+      searchQuery: null,
+    }
+  },
+
+  components:{
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    CalendarIcon
+  },
+
   setup() {
     return {
       resources,
