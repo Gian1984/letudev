@@ -5,7 +5,7 @@ import ResourcesView from "../views/ResourcesView.vue"
 import AngularUILibraries from "../categories/AngularUILibraries.vue"
 import ChartLibraries from "../categories/ChartLibraries.vue"
 import ChromeExtensions from "../categories/ChromeExtensions.vue"
-import Colors from "../categories/Colors.vue"
+import Colors from "../categories/ColorsRes.vue"
 import CSSAnimations from "../categories/CSSAnimations.vue"
 import CSSFrameworks from "../categories/CSSFrameworks.vue"
 import CSSMethodologies from "../categories/CSSMethodologies.vue"
@@ -674,6 +674,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  window.scrollTo(0, 0)
   // This goes through the matched routes from last to first, finding the closest route with a title.
   // e.g., if we have `/some/deep/nested/route` and `/some`, `/deep`, and `/nested` have titles,
   // `/nested`'s will be chosen.

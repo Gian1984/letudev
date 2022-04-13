@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Pacifico: ["Pacifico", "cursive"],
+      },
       animation: {
         bounce: 'bounce 1s ease-in-out infinite',
       },
