@@ -24,14 +24,11 @@
   <main>
     <div class="bg-white">
       <div class="max-w-2xl mx-auto pt-12 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8">
-
-
-
         <div class="bg-white">
           <div class="max-w-2xl mx-auto py-6 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:py-6 lg:max-w-7xl lg:grid-cols-2">
             <div>
               <h2 class="text-xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Start where you are, use what you have, and do what you can.</h2>
-              <p class="mt-4 text-gray-500 text-sm sm:text-base ">
+              <p class="mt-4 text-gray-500 text-sm sm:text-base">
                 One of the important skills you need to learn as a Self-taught developer is to be resourceful, my father taught me this skill when I was still very young, and I didn’t know it would take me far in life, and I want you to do the same.<br><br>
                 <span class="font-bold text-orange-500">re-source-ful</span><br>
                 <i>— having the ability to find clever ways to overcome difficulties.</i><br><br>
@@ -47,10 +44,10 @@
             </div>
             <div class="hidden sm:block">
               <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                <img src="../assets/img/father.webp" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="bg-gray-100 rounded-lg" />
-                <img src="../assets/img/goals.webp" alt="Top down view of walnut card tray with embedded magnets and card groove." class="bg-gray-100 rounded-lg" />
-                <img src="../assets/img/developer.webp" alt="Side of walnut card tray with card groove and recessed card area." class="bg-gray-100 rounded-lg" />
-                <img src="../assets/img/idea.webp" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/father.webp" alt="father_teaching" class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/goals.webp" alt="set_your_goals" class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/developer.webp" alt="develop_your_knowledge" class="bg-gray-100 rounded-lg" />
+                <img src="../assets/img/idea.webp" alt="great_idea" class="bg-gray-100 rounded-lg" />
               </div>
             </div>
           </div>
@@ -77,6 +74,46 @@
               </div>
             </router-link>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="max-w-7xl mx-auto sm:pt-12 sm:px-2 sm:py- lg:px-4">
+        <div class="max-w-2xl mx-auto px-4 lg:max-w-none">
+          <div class="grid grid-cols-1 items-center gap-y-10 gap-x-16 lg:grid-cols-2">
+            <div>
+              <h2 class="text-xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Skill up everyday</h2>
+              <p class="mt-4 text-sm sm:text-base text-gray-500">
+                Being a developer today just might be one of the coolest jobs in the universe. It's like being a painter during the Renaissance or an astronaut during the Space Race. As web developers we are not only witnessing, but participating in daily revolutions in technology. The landscape is radically changing and inventions and discoveries are happening at an ever increasing pace.
+                Because of this, there's almost no stability, which means that there are more opportunities than there are people to take advantage of them. It's not exactly a bad problem to have, but it also means that we can't afford to stop learning. So, to help you stay on top of your game, I've rounded up some essential learning resources web development.
+              </p>
+            </div>
+            <div class=" aspect-w-3 aspect-h-2 bg-gray-100 rounded-lg overflow-hidden">
+              <img src="../assets/img/learn.webp" alt="learn_image" class="object-center object-cover" />
+            </div>
+          </div>
+          <ul role="list" class="sm:mt-16 mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <li v-for="incentive in incentives" :key="incentive.email" class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+              <div class="w-full flex items-center justify-between p-6 space-x-6">
+                <div class="flex-1">
+                  <div class="flex items-center space-x-3">
+                    <h3 class="text-gray-900 text-sm font-medium truncate">{{ incentive.name }}</h3>
+                  </div>
+                  <p class="mt-2 text-gray-500 text-sm">{{ incentive.title }}</p>
+                </div>
+              </div>
+              <div>
+                <div class="relative">
+                    <span class="inline-flex flex mx-auto">
+                      <button type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">1</button>
+                      <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">2</button>
+                      <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">3</button>
+                    </span>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -119,17 +156,59 @@ const features = [
   },
 ]
 
+const incentives = [
+  {
+    name: '1 - Boot camps',
+    title: 'Boot camps are a way to go from novice to expert in just a few months. They cost several thousand dollars or more and require full-time attendance, but there\'s no better way to ramp up quickly.',
+    role: 'Admin',
+    email: 'janecooper@example.com',
+    telephone: '+1-202-555-0170',
+    imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+  },
+  {
+    name: '2 - Podcasts',
+    title: 'Sadly, the space here is pretty sparse, but not enough to write it off completely. Only two podcasts are producing regular content and have been around for a while.',
+    role: 'Admin',
+    email: 'janecooper@example.com',
+    telephone: '+1-202-555-0170',
+    imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+  },
+  {
+    name: '3 - User Groups.',
+    title: 'One of the best ways to learn is to associate with others who are just as passionate. Many developers have demonstrated their commitment to learning by spending their free time to improve themselves.',
+    role: 'Admin',
+    email: 'janecooper@example.com',
+    telephone: '+1-202-555-0170',
+    imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+  },
+  {
+    name: '4 - People.',
+    title: 'There are many personalities in the industry doing a lot of great work. Finding people you admire who are doing work you\'re interested in and following them is a mark of someone interested in learning.',
+    role: 'Admin',
+    email: 'janecooper@example.com',
+    telephone: '+1-202-555-0170',
+    imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+  },
+  // More people...
+]
+
+
 
 
 export default {
 
   components:{
-    ChevronRightIcon
+    ChevronRightIcon,
   },
 
   setup() {
     return {
       features,
+      incentives,
     }
   },
 }
