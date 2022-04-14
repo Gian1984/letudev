@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutView from '../views/AboutView.vue'
 import HomeView from "../views/HomeView.vue"
+import ProjectView from "../views/ProjectView.vue"
 import ResourcesView from "../views/ResourcesView.vue"
 import AngularUILibraries from "../categories/AngularUILibraries.vue"
 import ChartLibraries from "../categories/ChartLibraries.vue"
@@ -45,15 +46,15 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Home Page - Example App',
+        title: 'Let You Develop - Home Page',
         metaTags: [
           {
             name: 'description',
-            content: 'The home page of our example app.'
+            content: 'Learning web development is a journey and for this, you would need a road map. One of the biggest challenges faced by new developers when learning web development is not knowing where to start, what to learn, or the path to achieve their goals.'
           },
           {
             property: 'og:description',
-            content: 'The home page of our example app.'
+            content: 'Learning web development is a journey and for this, you would need a road map. One of the biggest challenges faced by new developers when learning web development is not knowing where to start, what to learn, or the path to achieve their goals.'
           }
         ]
       }
@@ -63,15 +64,33 @@ const router = createRouter({
       name: 'about',
       component: AboutView,
       meta: {
-        title: 'About Page - Example App',
+        title: 'Let You Develop - About Page',
         metaTags: [
           {
             name: 'description',
-            content: 'The about page of our example app.'
+            content: 'I\'m a web developer from Turin, Italy and currently living in Brussels. I enjoy building everything from small business to rich interactive apps.'
           },
           {
             property: 'og:description',
-            content: 'The about page of our example app.'
+            content: 'I\'m a web developer from Turin, Italy and currently living in Brussels. I enjoy building everything from small business to rich interactive apps.'
+          }
+        ]
+      },
+    },
+    {
+      path: '/project',
+      name: 'project',
+      component: ProjectView,
+      meta: {
+        title: 'Let You Develop - Project Page',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Letudev.com is a community effort to create, resources, roadmaps, guides, and other educational content to help guide the developers in picking up the path and guide their learnings.'
+          },
+          {
+            property: 'og:description',
+            content: 'Letudev.com is a community effort to create, resources, roadmaps, guides, and other educational content to help guide the developers in picking up the path and guide their learnings..'
           }
         ]
       },
