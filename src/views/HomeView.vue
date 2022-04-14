@@ -105,11 +105,11 @@
               </div>
               <div>
                 <div class="relative">
-                    <span class="inline-flex flex mx-auto">
-                      <button type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">1</button>
-                      <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">2</button>
-                      <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2  bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">3</button>
-                    </span>
+                    <div class="inline-flex flex mx-auto">
+                      <div v-for="link in incentive.link" :key="link.name">
+                        <a :href="link.href" target="_blank" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-white text-sm font-medium text-orange-500 hover:bg-gray-50 hover:text-orange-700 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">{{link.name}}</a>
+                      </div>
+                    </div>
                 </div>
               </div>
             </li>
@@ -117,6 +117,34 @@
         </div>
       </div>
     </div>
+
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="bg-teal-500 shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+          <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+            <div class="lg:self-center">
+              <h2 class="text-xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block">Never give up!</span>
+              </h2>
+              <p class="mt-4 text-sm sm:text-base text-white">
+                Through our coding journeys, it can get tough sometimes. You may encounter a concept that you don’t understand, or your code doesn’t work. You have tried everything, searched on StackOverflow, read every single piece of the documentation but you can’t seem to solve the problem.
+                You might feel frustrated, overwhelmed, and you just want to throw in the towel. You start thinking, “This is not worth it” and are very tempted to give up.
+                Nonetheless, you may have invested a lot of time, energy, and even money into learning how to code. You may have invested your hard earned money in a bootcamp, enrolling in online courses, or also attending university.
+                No worries, you are not alone. I have been there.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:pt-16 sm:px-16 lg:py-16">
+            <div class="lg:self-center">
+              <div class="my-auto">
+                <img class="object-cover" src="../assets/img/graduation.webp" alt="never_give_up" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </main>
 
@@ -158,40 +186,51 @@ const features = [
 
 const incentives = [
   {
-    name: '1 - Boot camps',
+    name: '1 - Online App',
+    title: 'Start with free programming and coding education app. An interactive way to learn & practice programming online. Improve coding skills to advance in your education and career',
+    link:[
+      {name:'Sololearn',href:'https://www.sololearn.com/home'},
+      {name:'Khan Academy',href:'https://www.khanacademy.org/'},
+      {name:'Openclassrooms',href:'https://openclassrooms.com/en/'}
+    ]
+  },
+  {
+    name: '2 - Boot camps',
     title: 'Boot camps are a way to go from novice to expert in just a few months. They cost several thousand dollars or more and require full-time attendance, but there\'s no better way to ramp up quickly.',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    link:[
+      {name:'42',href:'https://42.fr/en/homepage/'},
+      {name:'BeCode',href:'https://becode.org/learn/junior-web-developer/'},
+      {name:'Le Wagon',href:'https://www.lewagon.com/'}
+    ]
   },
   {
-    name: '2 - Podcasts',
+    name: '3 - Podcasts',
     title: 'Sadly, the space here is pretty sparse, but not enough to write it off completely. Only two podcasts are producing regular content and have been around for a while.',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    link:[
+      {name:'Javascriptjabber',href:'https://javascriptjabber.com/'},
+      {name:'Shoptalkshow',href:'https://shoptalkshow.com/'},
+    ]
   },
   {
-    name: '3 - User Groups.',
+    name: '4 - User Groups',
     title: 'One of the best ways to learn is to associate with others who are just as passionate. Many developers have demonstrated their commitment to learning by spending their free time to improve themselves.',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    link:[
+      {name:'Discord channels',href:'https://dev.to/htnguy/top-10-discord-servers-for-developers-559o'},
+    ]
   },
   {
-    name: '4 - People.',
-    title: 'There are many personalities in the industry doing a lot of great work. Finding people you admire who are doing work you\'re interested in and following them is a mark of someone interested in learning.',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    name: '5 - User Groups',
+    title: 'One of the best ways to learn is to associate with others who are just as passionate. Many developers have demonstrated their commitment to learning by spending their free time to improve themselves.',
+    link:[
+      {name:'Discord channels',href:'https://dev.to/htnguy/top-10-discord-servers-for-developers-559o'},
+    ]
+  },
+  {
+    name: '6 - Stack Overflow',
+    title: 'Hands down this is the best place to learn things and get issues solved. In combination with one of the aforementioned online coding tools, you can find a solution for just about any problem here.',
+    link:[
+      {name:'Stackoverflow',href:'https://stackoverflow.com/'},
+    ]
   },
   // More people...
 ]
