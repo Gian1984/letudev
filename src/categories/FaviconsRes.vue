@@ -29,7 +29,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/logos" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Logos</router-link>
+                    <router-link to="/favicons" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Favicons</router-link>
                   </div>
                 </li>
               </ol>
@@ -37,7 +37,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Logos</h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Favicons</h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -114,17 +114,15 @@ import { ChevronDoubleRightIcon, CalendarIcon } from '@heroicons/vue/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid'
 
 const projects = [
-  { name: 'Instant Logo Search', href: "http://instantlogosearch.com/", desc:'Thousands of free brands logos ( SVG - PNG )', bgColor: 'bg-pink-600' },
-  { name: 'LogoSear.ch', href:"https://logosear.ch/search.html", desc:'Search engine with over 200,000 SVG logos indexed<', bgColor: 'bg-purple-600' },
-  { name: 'SVGPorn', href: "https://svgporn.com", desc: '1000+ high-quality SVG logos', bgColor: 'bg-yellow-500' },
-  { name: 'Payment System Logos', href:"https://github.com/mpay24/payment-logos/" , desc: 'Logos for payment systems available in png and svg', bgColor: 'bg-green-500' },
-  { name: 'Browser Logos', href: "https://github.com/alrra/browser-logos/", desc: 'High resolution web browser logos', bgColor: 'bg-orange-500' },
-  { name: 'VectorLogoZone', href: "https://www.vectorlogo.zone/", desc: 'Consistently formatted SVG logos', bgColor: 'bg-blue-500' },
-  { name: 'World Vector Logo', href: "https://worldvectorlogo.com/", desc: 'Download vector logos of brands you love', bgColor: 'bg-cyan-500' },
-  { name: 'Logo Maker', href: "https://logomakr.com/", desc: 'Create custom logos', bgColor: 'bg-sky-500' },
-  { name: 'Free Logo Maker', href: "https://www.namecheap.com/logo-maker/", desc: 'Fast, All-in-One Logo Generator', bgColor: 'bg-amber-500' },
-  { name: 'LOGOwine', href: "https://www.logo.wine/", desc: 'Brand Logos Free Download in SVG Vector &amp; PNG File Format', bgColor: 'bg-red-500' },
+  { name: 'Favicon.io', href: "https://favicon.io/", desc:'Generate a favicon from text, from an image, or from an emoji. Download in .ico and .png formats', bgColor: 'bg-pink-600' },
+  { name: 'Favicomatic', href:"https://favicomatic.com/" , desc:'Generate favicons of all the sizes and formats as well as the HTML code needed to support every possible browser or device', bgColor: 'bg-purple-600' },
+  { name: 'Favicon Generator', href: "http://tools.dynamicdrive.com/favicon/", desc: 'Generate favicon ico files for your website', bgColor: 'bg-yellow-500' },
+  { name: 'RealFaviconGenerator', href: "https://realfavicongenerator.net/" , desc: 'Generate icons for all platforms (Windows, iOS, Android)', bgColor: 'bg-green-500' },
+  { name: 'FontIcon', href: "https://gauger.io/fonticon/", desc: 'Generate favicons and images from Font Awesome icons', bgColor: 'bg-orange-500' },
+  { name: 'Favicon.cc', href: "https://www.favicon.cc", desc: 'Draw a favicon online and browse through a library of favicons made by other users', bgColor: 'bg-blue-500' },
+  { name: 'Maskable.app Editor', href: "https://maskable.app/editor/", desc: 'Generate maskable PWA icons based on your existing icon', bgColor: 'bg-cyan-500' },
 ]
+
 export default {
   computed: {
 
