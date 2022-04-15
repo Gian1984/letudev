@@ -219,10 +219,12 @@ const incentives = [
     ]
   },
   {
-    name: '5 - User Groups',
-    title: 'One of the best ways to learn is to associate with others who are just as passionate. Many developers have demonstrated their commitment to learning by spending their free time to improve themselves.',
+    name: '5 - People',
+    title: 'There are many personalities in the industry doing a lot of great work. Finding people you admire who are doing work you\'re interested in and following them is a mark of someone interested in learning. ',
     link:[
-      {name:'Discord channels',href:'https://dev.to/htnguy/top-10-discord-servers-for-developers-559o'},
+      {name:'Addy Osmani',href:'https://twitter.com/addyosmani'},
+      {name:'Paul Irish',href:'https://twitter.com/paul_irish'},
+      {name:'Jeffrey Way',href:'https://twitter.com/jeffrey_way?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'},
     ]
   },
   {
