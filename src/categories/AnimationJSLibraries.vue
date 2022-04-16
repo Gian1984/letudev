@@ -29,7 +29,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/cssmethodologies" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">CSS Methodologies</router-link>
+                    <router-link to="/animationjslibraries" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Javascript Animation Libraries</router-link>
                   </div>
                 </li>
               </ol>
@@ -37,7 +37,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">CSS Methodologies</h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Javascript Animation Libraries</h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -114,10 +114,39 @@ import { ChevronDoubleRightIcon, CalendarIcon } from '@heroicons/vue/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid'
 
 const projects = [
-  { name: 'OOCSS', href:"http://oocss.org/", desc:'OOCSS concepts help us write components that are flexible, modular and interchangeable.', bgColor: 'bg-pink-600' },
-  { name: 'Atomic CSS', href:"https://acss.io/", desc:'Atomic CSS is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function.', bgColor: 'bg-purple-600' },
-  { name: 'BEM', href:"http://getbem.com/", desc:'Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development.', bgColor: 'bg-yellow-500' },
-  { name: 'SMACSS', href:"http://smacss.com/", desc: 'SMACSS is a way to examine your design process and as a way to fit those rigid frameworks into a flexible thought process.', bgColor: 'bg-green-500' },
+  { name: 'Greensock', href:"https://greensock.com/", desc:'A JavaScript library for building high-performance animations that work in every major browser', bgColor: 'bg-pink-600' },
+  { name: 'Velocity.js', href:"http://velocityjs.org/", desc:'Simple & light weight vanilla javascript plugin to create smooth & beautiful animations when you scroll!', bgColor: 'bg-purple-600' },
+  { name: 'Rellax.js', href:"https://github.com/dixonandmoe/rellax", desc:'A buttery smooth, super lightweight, vanilla javascript parallax library', bgColor: 'bg-yellow-500' },
+  { name: 'Three.js', href:"https://github.com/mrdoob/three.js/", desc: 'An easy to use, lightweight, 3D library with a default WebGL renderer.', bgColor: 'bg-green-500' },
+  { name: 'Atropos', href:"https://atroposjs.com/", desc: 'Atropos is a lightweight, free and open-source JavaScript library to create stunning touch-friendly 3D parallax hover effects.', bgColor: 'bg-orange-500' },
+  { name: 'Wow.js', href:"https://wowjs.uk/", desc: 'Reveal Animations When You Scroll.', bgColor: 'bg-blue-500' },
+  { name: 'Chocolat.js', href:"http://chocolat.insipi.de/", desc:'Free lightbox plugin.', bgColor: 'bg-cyan-500' },
+  { name: 'Animate On Scroll', href:"https://michalsnik.github.io/aos/", desc:'Animate on scroll library to reveal animations when You scroll.', bgColor: 'bg-sky-500' },
+  { name: 'Tilt.js', href:"http://gijsroge.github.io/tilt.js/", desc: 'A tiny requestAnimationFrame powered 60+fps lightweight parallax hover tilt effect for jQuery.', bgColor: 'bg-amber-500' },
+  { name: 'Roughnotation', href:"https://roughnotation.com/", desc: 'Rough Notation is a small JavaScript library to create and animate annotations on a web page', bgColor: 'bg-red-500' },
+  { name: 'tsParticles', href:"https://particles.js.org/", desc: 'A lightweight library for creating particles, an improved version of the abandoned and obsolete particles.js', bgColor: 'bg-emerald-500' },
+  { name: 'Particles.js', href:"https://vincentgarreau.com/particles.js/", desc: 'A lightweight JavaScript library for creating particles', bgColor: 'bg-pink-500' },
+  { name: 'Mo.js', href:"https://mojs.github.io/" , desc:'The motion graphics toolbelt for the web', bgColor: 'bg-purple-600' },
+  { name: 'Lightbox2', href:"https://lokeshdhakar.com/projects/lightbox2/", desc: 'A small JS library to overlay images on top of the current page.', bgColor: 'bg-yellow-500' },
+  { name: 'Slick', href:"https://kenwheeler.github.io/slick/", desc: 'Fully responsive carousel', bgColor: 'bg-green-500' },
+  { name: 'Barba.js', href:"https://barba.js.org/", desc: 'Create fluid and smooth transitions between your website’s pages.', bgColor: 'bg-orange-500' },
+  { name: 'Locomotive Scroll', href:"https://locomotivemtl.github.io/locomotive-scroll/", desc: 'A simple scroll library that provides detection of elements in viewport & smooth scrolling with parallax.', bgColor: 'bg-blue-500' },
+  { name: 'Owl carousel', href:"https://owlcarousel2.github.io/OwlCarousel2/", desc: 'Free responsive jQuery carousel', bgColor: 'bg-cyan-500' },
+  { name: 'Swiperjs', href:"https://swiperjs.com/", desc: 'Free, Open Source, Modern Slider without jQuery. Available for Vanilla JS and all modern frameworks like React, Vue, Angular etc.', bgColor: 'bg-sky-500' },
+  { name: 'Splide', href:"https://splidejs.com", desc: 'Free, pure JS library for carousels and sliders', bgColor: 'bg-amber-500' },
+  { name: 'Simple Parallax', href:"https://simpleparallax.com/", desc:'The easiest way to get a parallax effect with javascript', bgColor: 'bg-red-500' },
+  { name: 'KUTE.js', href:"https://thednp.github.io/kute.js/", desc:'KUTE.js is a JavaScript animation engine for modern browsers.', bgColor: 'bg-emerald-500' },
+  { name: 'Granim.js', href:"https://sarcadass.github.io/granim.js/index.html", desc: 'Create fluid and interactive gradient animations with this small javascript library.', bgColor: 'bg-pink-500' },
+  { name: 'Popmotion', href:"https://popmotion.io/", desc:'Simple animation libraries for delightful user interfaces.', bgColor: 'bg-purple-600' },
+  { name: 'Vivus', href:"https://maxwellito.github.io/vivus/", desc: 'Vivus is a lightweight JavaScript class (with no dependencies) that allows you to animate SVGs, giving them the appearence of being drawn.', bgColor: 'bg-yellow-500' },
+  { name: 'Typed.js', href:"https://mattboldt.com/demos/typed-js/", desc:'A JavaScript Typing Animation Library.', bgColor: 'bg-green-500' },
+  { name: 'Progress Bar.js', href:"https://kimmobrunfeldt.github.io/progressbar.js/", desc: 'Responsive and slick progress bars with animated SVG paths.', bgColor: 'bg-orange-500' },
+  { name: 'Midnight.js', href:"https://aerolab.github.io/midnight.js/", desc: 'Midnight.js lets you switch fixed headers on the fly', bgColor: 'bg-blue-500' },
+  { name: 'Tingle.js', href:"https://tingle.robinparisi.com/", desc: 'Tingle is a simple modal plugin written in pure JavaScript', bgColor: 'bg-cyan-500' },
+  { name: 'Theatre.js', href:"https://www.theatrejs.com/" , desc:'Theatre.js is a JavaScript animation library with a GUI. It animates the DOM, WebGL, and any other JavaScript variable.', bgColor: 'bg-amber-500' },
+  { name: 'Splidejs', href:"https://splidejs.com/", desc:'Splide is a lightweight, flexible and accessible slider/carousel written in TypeScript. No dependencies, no Lighthouse errors.', bgColor: 'bg-red-500' },
+  { name: 'Nice-waves', href:"https://gvguy.github.io/nice-waves/" , desc: 'Beautiful animated waves', bgColor: 'bg-emerald-500' },
+  { name: 'Vanta.js', href:"https://www.vantajs.com/", desc: 'Animated website backgrounds in a few lines of code.', bgColor: 'bg-pink-500' },
 ]
 
 export default {

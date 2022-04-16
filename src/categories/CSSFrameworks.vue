@@ -183,9 +183,9 @@ export default {
         const myRegex = new RegExp(this.searchQuery, 'gi');
         let resultFacet = this.facet;
         if (resultFacet.length == 0) {
-          return (result.name.match(myRegex) || result.name.match(myRegex))
+          return (result.desc.match(myRegex) || result.desc.match(myRegex))
         }
-        return (result.name.match(myRegex) || result.name.match(myRegex)) && (resultFacet.includes(result.id));
+        return (result.desc.match(myRegex) || result.desc.match(myRegex)) && (resultFacet.includes(result.id));
       })
     },
   },

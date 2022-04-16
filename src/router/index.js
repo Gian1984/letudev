@@ -33,7 +33,7 @@ import UIComponents from "../categories/UIComponents.vue"
 import UIGraphics from "../categories/UIGraphics.vue"
 import VectorsClip from "../categories/VectorsClip.vue"
 import VueUILibraries from "../categories/VueUILibraries.vue"
-import AnimationLibraries from "../categories/AnimationLibraries.vue"
+import AnimationLibraries from "../categories/AnimationJSLibraries.vue"
 import PublicAPIs from "../categories/PublicAPIs.vue"
 
 
@@ -654,8 +654,8 @@ const router = createRouter({
       },
     },
     {
-      path:'/animationlibraries',
-      name:'animationlibraries',
+      path:'/animationjslibraries',
+      name:'animationjslibraries',
       component: AnimationLibraries,
       meta: {
         title: 'Resources Javascript Animation Libraries',
