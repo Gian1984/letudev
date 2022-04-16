@@ -64,7 +64,7 @@
               </div>
               <div class="mt-2 flex">
                 <router-link :to="feature.href" class="bg-teal-500 hover:bg-teal-700 text-white text-sm py-1 px-2 rounded-full flex">
-                  <span class="ml-2">discover</span>
+                  <span class="ml-2">Check it out</span>
                   <ChevronRightIcon class=" h-5 w-5" aria-hidden="true" />
                 </router-link>
               </div>
