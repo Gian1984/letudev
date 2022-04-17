@@ -106,89 +106,44 @@
 
   <RouterView />
 
-  <footer class="bg-white" aria-labelledby="footer-heading">
+  <footer class="bg-gray-300" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-      <div class="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
-        <div class="grid grid-cols-2 gap-8 xl:col-span-4">
-          <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
-              <ul role="list" class="mt-4 space-y-4">
-                <li v-for="item in navigation.solutions" :key="item.name">
-                  <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
-                    {{ item.name }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
-              <ul role="list" class="mt-4 space-y-4">
-                <li v-for="item in navigation.support" :key="item.name">
-                  <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
-                    {{ item.name }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-              <ul role="list" class="mt-4 space-y-4">
-                <li v-for="item in navigation.company" :key="item.name">
-                  <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
-                    {{ item.name }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-12 md:mt-0">
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-              <ul role="list" class="mt-4 space-y-4">
-                <li v-for="item in navigation.legal" :key="item.name">
-                  <router-link :to="item.href" class="text-base text-gray-500 hover:text-gray-900">
-                    {{ item.name }}
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="mt-12 xl:mt-0">
-          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Language</h3>
-          <form class="mt-4 sm:max-w-xs">
-            <fieldset class="w-full">
-              <label for="language" class="sr-only">Language</label>
-              <div class="relative">
-                <select id="language" name="language" class="appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-base text-gray-900 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm">
-                  <option selected="">English</option>
-                  <option>French</option>
-                  <option>German</option>
-                  <option>Japanese</option>
-                  <option>Spanish</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center">
-                  <ChevronDownIcon class="h-4 w-4 text-gray-400" aria-hidden="true" />
-                </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
+
+      <!-- Begin Mailchimp Signup Form -->
+
+
+
       <div class="border-t border-gray-200 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
         <div>
           <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Subscribe to our newsletter</h3>
           <p class="mt-2 text-base text-gray-500">The latest news, articles, and resources, sent to your inbox weekly.</p>
         </div>
-        <form class="mt-4 sm:flex sm:max-w-md lg:mt-0">
-          <label for="email-address" class="sr-only">Email address</label>
-          <input type="email" name="email-address" id="email-address" autocomplete="email" required="" class="appearance-none min-w-0 w-full bg-white border border-gray-300 py-2 px-4 text-base rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:placeholder-gray-400 sm:max-w-xs" placeholder="Enter your email" />
-          <div class="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-            <button type="submit" class="w-full bg-teal-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Subscribe</button>
+        <div class="mt-4 sm:flex sm:max-w-md lg:mt-0">
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form action="https://gianlucatiengo.us5.list-manage.com/subscribe/post?u=7851ded2a72d6b932d7a941ae&amp;id=994e02591b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mt-4 sm:flex sm:max-w-md lg:mt-0" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
+                </div>
+                <div id="mce-responses" class="clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7851ded2a72d6b932d7a941ae_994e02591b" tabindex="-1" value=""></div>
+                <div class="optionalParent">
+                  <div class="clear foot">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button bg-teal-600 hover:bg-teal-700">
+                    <p class="brandingLogo"><a href="http://eepurl.com/hZQM4b" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
+
+          <!--End mc_embed_signup-->
+        </div>
       </div>
       <div class="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
         <div class="flex space-x-6 md:order-2">
@@ -197,7 +152,7 @@
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-500 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
+        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-500 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -297,6 +252,15 @@ const navigation = {
 
 export default {
 
+  methods: {
+    onError() {
+      // handle error
+    },
+    onSuccess() {
+      // handle success
+    },
+  },
+
   components: {
     ChevronDownIcon,
     Disclosure,
@@ -321,6 +285,10 @@ export default {
 
 <style>
 button:focus {
+  outline: none !important;
+}
+
+#mce-EMAIL{
   outline: none !important;
 }
 

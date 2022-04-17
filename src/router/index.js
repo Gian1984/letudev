@@ -3,6 +3,7 @@ import AboutView from '../views/AboutView.vue'
 import HomeView from "../views/HomeView.vue"
 import ProjectView from "../views/ProjectView.vue"
 import ResourcesView from "../views/ResourcesView.vue"
+import ThanksSub from "../components/ThanksSub.vue"
 import AngularUILibraries from "../categories/AngularUILibraries.vue"
 import ChartLibraries from "../categories/ChartLibraries.vue"
 import ChromeExtensions from "../categories/ChromeExtensions.vue"
@@ -100,15 +101,33 @@ const router = createRouter({
       name:'resources',
       component: ResourcesView,
       meta: {
-        title: 'Resources Page - Example App',
+        title: 'Let You Develop - Resources Page',
         metaTags: [
           {
             name: 'description',
-            content: 'The resources page of our example app.'
+            content: 'Super Resources for Developers and Makers. We publish awesome resources for designers, developers, marketers and technology lovers.'
           },
           {
             property: 'og:description',
-            content: 'The resources page of our example app.'
+            content: 'Super Resources for Developers and Makers. We publish awesome resources for designers, developers, marketers and technology lovers.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/thankssub',
+      name:'thankssub',
+      component: ThanksSub,
+      meta: {
+        title: 'Thanks Page - Thank you for subscribing!',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Thank you for subscribing!'
+          },
+          {
+            property: 'og:description',
+            content: 'Thank you for subscribing!'
           }
         ]
       },
