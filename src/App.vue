@@ -114,7 +114,7 @@
 
 
 
-      <div class="border-t border-gray-200 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
+      <div class="lg:flex lg:items-center lg:justify-between xl:mt-0">
         <div>
           <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Subscribe to our newsletter</h3>
           <p class="mt-2 text-base text-gray-500">The latest news, articles, and resources, sent to your inbox weekly.</p>
@@ -153,13 +153,13 @@
             </a>
           </div>
         </nav>
-        <div class="mt-8 flex justify-center space-x-6">
+        <div class="border-t border-gray-200 pt-8 mt-8 flex justify-center space-x-6">
           <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">{{ item.name }}</span>
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="mt-10 text-base text-gray-400 md:mt-0 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-600 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
+        <p class="mt-5 text-base text-gray-400 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-600 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>
