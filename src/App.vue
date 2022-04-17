@@ -145,14 +145,21 @@
           <!--End mc_embed_signup-->
         </div>
       </div>
-      <div class="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
-        <div class="flex space-x-6 md:order-2">
-          <a v-for="item in navigation.social" :key="item.name" :href="item.href" target="_blank" class="text-gray-400 hover:text-gray-500">
+      <div class="max-w-7xl mx-auto px-4 overflow-hidden sm:px-6 lg:px-8">
+        <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+          <div v-for="item in navigation.main" :key="item.name" class="px-5 py-2">
+            <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
+              {{ item.name }}
+            </a>
+          </div>
+        </nav>
+        <div class="mt-8 flex justify-center space-x-6">
+          <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">{{ item.name }}</span>
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-500 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
+        <p class="mt-10 text-base text-gray-400 md:mt-0 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-600 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -290,6 +297,16 @@ button:focus {
 
 #mce-EMAIL{
   outline: none !important;
+  border-radius: 8px !important;
+}
+
+#mc-embedded-subscribe{
+  border-radius: 25px !important;
+  background-color: #0d9488 !important;
+}
+
+#mc-embedded-subscribe:hover{
+  background-color: #14b8a6 !important;
 }
 
 </style>
