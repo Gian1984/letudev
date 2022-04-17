@@ -3,6 +3,16 @@
 
 
   <div class="bg-white">
+    <div class="max-w-7xl mx-auto pt-10 px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="mt-1 text-2xl font-extrabold text-gray-900 sm:tracking-tight sm:text-4xl">All about U & I !</p>
+        <p class="max-w-xl mx-auto text-sm sm:text-base text-gray-500">Everything you need to know about me, this project, and what I want to build with you!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-white">
     <div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <!-- Product -->
       <div class="lg:grid lg:grid-rows-1 lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
@@ -190,7 +200,7 @@
 
 
   <div class="bg-white">
-    <div class="max-w-7xl mx-auto pt-10 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+    <div class="max-w-7xl mx-auto pt-10 pb-16 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
       <div class="space-y-8 sm:space-y-12">
         <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
           <h2 class="text-xl font-extrabold tracking-tight sm:text-4xl">The People</h2>

@@ -259,15 +259,6 @@ const navigation = {
 
 export default {
 
-  methods: {
-    onError() {
-      // handle error
-    },
-    onSuccess() {
-      // handle success
-    },
-  },
-
   components: {
     ChevronDownIcon,
     Disclosure,
@@ -308,6 +299,7 @@ button:focus {
 #mc-embedded-subscribe:hover{
   background-color: #14b8a6 !important;
 }
+
 
 </style>
 
