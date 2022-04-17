@@ -1,9 +1,32 @@
 <template>
+
   <header>
     <div>
-      <div>
-        <img class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="header_res" />
+      <div class="relative">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"/>
+        <div class="mx-auto">
+          <div class="relative sm:overflow-hidden" style="min-height: 40vh">
+            <div class="absolute inset-0">
+              <img class="h-full w-full object-cover" src="../assets/img/mesh.webp" alt="letudev_header"/>
+              <div class="absolute inset-0" />
+            </div>
+            <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+              <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                <span class="block text-white uppercase font-Pacifico">Let  U  dev</span>
+                <span class="block text-teal-500 text-2xl">List of useful resources made for all web developers </span>
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </header>
+
+
+  <main class="-mt-30 max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8 mt-24 mb-10">
+
+
+    <div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div>
           <div>
@@ -47,9 +70,8 @@
         </div>
       </div>
     </div>
-  </header>
 
-  <main class="-mt-30 max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8 mt-24 mb-10">
+
     <div>
       <label for="name" class="mt-5 block text-sm font-medium text-gray-700">
         Find your resource

@@ -148,16 +148,16 @@
               <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
               <ul role="list" class="mt-4 space-y-4">
                 <li v-for="item in navigation.legal" :key="item.name">
-                  <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
+                  <router-link :to="item.href" class="text-base text-gray-500 hover:text-gray-900">
                     {{ item.name }}
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="mt-12 xl:mt-0">
-          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Language &amp; Currency</h3>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Language</h3>
           <form class="mt-4 sm:max-w-xs">
             <fieldset class="w-full">
               <label for="language" class="sr-only">Language</label>
@@ -168,24 +168,6 @@
                   <option>German</option>
                   <option>Japanese</option>
                   <option>Spanish</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center">
-                  <ChevronDownIcon class="h-4 w-4 text-gray-400" aria-hidden="true" />
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="mt-4 w-full">
-              <label for="currency" class="sr-only">Currency</label>
-              <div class="relative">
-                <select id="currency" name="currency" class="appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-base text-gray-900 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm">
-                  <option>ARS</option>
-                  <option selected="">AUD</option>
-                  <option>CAD</option>
-                  <option>CHF</option>
-                  <option>EUR</option>
-                  <option>GBP</option>
-                  <option>JPY</option>
-                  <option>USD</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center">
                   <ChevronDownIcon class="h-4 w-4 text-gray-400" aria-hidden="true" />
@@ -210,7 +192,7 @@
       </div>
       <div class="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
         <div class="flex space-x-6 md:order-2">
-          <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
+          <a v-for="item in navigation.social" :key="item.name" :href="item.href" target="_blank" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">{{ item.name }}</span>
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
@@ -230,25 +212,14 @@ import { ChevronDownIcon } from '@heroicons/vue/solid'
 const navigation = {
   solutions: [
     { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: 'Resources', href: '/resources' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'About', href: '/about' },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
     { name: 'Privacy', href: '#' },
     { name: 'Terms', href: '#' },
   ],
@@ -283,7 +254,7 @@ const navigation = {
     },
     {
       name: 'Twitter',
-      href: '#',
+      href: 'https://twitter.com/truefreedom84',
       icon: defineComponent({
         render: () =>
             h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -295,7 +266,7 @@ const navigation = {
     },
     {
       name: 'GitHub',
-      href: '#',
+      href: 'https://github.com/Gian1984',
       icon: defineComponent({
         render: () =>
             h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -308,14 +279,14 @@ const navigation = {
       }),
     },
     {
-      name: 'Dribbble',
-      href: '#',
+      name: 'Linkedin',
+      href: 'https://www.linkedin.com/in/gianluca-tiengo/',
       icon: defineComponent({
         render: () =>
-            h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
+            h('svg', { fill: 'currentColor', viewBox: '0 0 21 21' }, [
               h('path', {
                 'fill-rule': 'evenodd',
-                d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z',
+                d: 'M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z',
                 'clip-rule': 'evenodd',
               }),
             ]),
@@ -347,4 +318,11 @@ export default {
   },
 }
 </script>
+
+<style>
+button:focus {
+  outline: none !important;
+}
+
+</style>
 

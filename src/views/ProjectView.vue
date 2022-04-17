@@ -65,7 +65,7 @@
 
 
     <section class="bg-teal-500 overflow-hidden">
-      <div class="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
+      <div class="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:py-20">
         <div class="relative lg:flex lg:items-center">
           <div class="relative lg:ml-10 mt-4">
             <svg class="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-teal-200 opacity-50" stroke="currentColor" fill="none" viewBox="0 0 144 144" aria-hidden="true">

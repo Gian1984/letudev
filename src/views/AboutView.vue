@@ -17,7 +17,7 @@
         <div class="max-w-2xl mx-auto mt-14 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
           <div class="flex flex-col-reverse">
             <div class="mt-4">
-              <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Gianluca Tiengo</h1>
+              <h1 class="text-xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Gianluca Tiengo</h1>
 
               <h2 id="information-heading" class="sr-only">Product information</h2>
               <div class="mt-2 flex text-sm text-gray-500">
@@ -27,21 +27,20 @@
             </div>
           </div>
 
-          <p class="text-gray-500 mt-6">I'm a web developer from Turin, Italy and currently living in Brussels. I enjoy building everything from small business to rich interactive apps. </p>
+          <p class="text-gray-500 mt-6 text-sm sm:text-base">I'm a web developer from Turin, Italy and currently living in Brussels. I enjoy building everything from small business to rich interactive apps. </p>
 
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-            <a href="https://www.gianlucatiengo.com/" target="_blank" class="w-full bg-teal-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-teal-500">Who I am</a>
+            <a href="https://www.gianlucatiengo.com/" target="_blank" class="w-full bg-teal-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-sm font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-teal-500">My web site <span class="ml-1" aria-hidden="true"> &rarr;</span></a>
 <!--            <button type="button" class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Preview</button>-->
           </div>
 
           <div class="border-t border-gray-200 mt-10 pt-10">
-            <h3 class="text-sm font-medium text-gray-900">Next step</h3>
+            <h3 class="text-sm font-medium text-gray-900">Profile</h3>
             <div class="mt-4 prose prose-sm text-gray-500 text-sm">
               <ul role="list">
-                <li>- Working to complete all resources</li>
-                <li>- Add APIs section</li>
-                <li>- Add Newsletter </li>
-                <li>- Add Articles section </li>
+                <li class="my-2">- I create successful responsive website that are fast, easy to use, and build with the best practices</li>
+                <li class="my-2">- The main area of expertise is full-stack development HTMl, CSS, JS, PHP, building small and medium web apps, animations.</li>
+                <li class="my-2">- I have also experience with popular open-source CMS like Wordpress. </li>
               </ul>
             </div>
           </div>
@@ -79,13 +78,13 @@
             <div class="border-b border-gray-200">
               <TabList class="-mb-px flex space-x-8">
                 <Tab as="template" v-slot="{ selected }">
-                  <button :class="[selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">My stack</button>
+                  <button :class="[selected ? 'border-teal-600 text-teal-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">My stack</button>
                 </Tab>
                 <Tab as="template" v-slot="{ selected }">
-                  <button :class="[selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">FAQ</button>
+                  <button :class="[selected ? 'border-teal-600 text-teal-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">About me</button>
                 </Tab>
                 <Tab as="template" v-slot="{ selected }">
-                  <button :class="[selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">About me</button>
+                  <button :class="[selected ? 'border-teal-600 text-teal-600' : 'border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300', 'whitespace-nowrap py-6 border-b-2 font-medium text-sm']">Next on track</button>
                 </Tab>
               </TabList>
             </div>
@@ -93,26 +92,15 @@
               <TabPanel class="-mb-10">
                 <h3 class="sr-only">My favourite stack</h3>
 
-                <div v-for="(review, reviewIdx) in reviews.featured" :key="review.id" class="flex text-sm text-gray-500 space-x-4">
+                <div v-for="(stack, stackIdx) in stacks.featured" :key="stack.id" class="flex text-sm text-gray-500 space-x-4">
                   <div class="flex-none py-10">
-                    <img :src="review.avatarSrc" alt="" class="w-10 h-10 bg-gray-100 rounded-full" />
+                    <img :src="stack.avatarSrc" alt="" class="w-10 h-10" />
                   </div>
-                  <div :class="[reviewIdx === 0 ? '' : 'border-t border-gray-200', 'py-10']">
-                    <h3 class="font-medium text-gray-900">{{ review.author }}</h3>
-                    <div class="mt-4 prose prose-sm max-w-none text-gray-500" v-html="review.content" />
+                  <div :class="[stackIdx === 0 ? '' : 'border-t border-gray-200', 'py-10']">
+                    <h3 class="font-medium text-gray-900">{{ stack.author }}</h3>
+                    <div class="mt-4 prose prose-sm max-w-none text-gray-500" v-html="stack.content" />
                   </div>
                 </div>
-              </TabPanel>
-
-              <TabPanel as="dl" class="text-sm text-gray-500">
-                <h3 class="sr-only">Frequently Asked Questions</h3>
-
-                <template v-for="faq in faqs" :key="faq.question">
-                  <dt class="mt-10 font-medium text-gray-900">{{ faq.question }}</dt>
-                  <dd class="mt-2 prose prose-sm max-w-none text-gray-500">
-                    <p>{{ faq.answer }}</p>
-                  </dd>
-                </template>
               </TabPanel>
 
               <TabPanel class="pt-10">
@@ -121,6 +109,22 @@
                 <div class="prose prose-sm max-w-none text-gray-500" v-html="About.content" />
               </TabPanel>
             </TabPanels>
+
+            <TabPanel as="dl" class="text-sm text-gray-500">
+              <h3 class="sr-only">Next on track</h3>
+
+              <div v-for="(next, nextIdx) in nexts.featured" :key="next.id" class="flex text-sm text-gray-500 space-x-4">
+                <div :class="[nextIdx === 0 ? '' : 'border-t border-gray-200', 'py-10']">
+                  <h3 class="font-medium text-gray-900">{{ next.author }}</h3>
+                  <p class="flex mt-0.5">
+                    <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                    <time :datetime="next.datetime">{{ next.date }}</time>
+                  </p>
+
+                  <div class="mt-4 prose prose-sm max-w-none text-gray-500" v-html="next.content" />
+                </div>
+              </div>
+            </TabPanel>
           </TabGroup>
         </div>
       </div>
@@ -128,12 +132,41 @@
   </div>
 
 
+  <div class="bg-teal-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:py-16 lg:px-8 py-12">
+      <p class="text-center text-base font-semibold uppercase text-white tracking-wider">
+        I am looking for partnerships or sponsors who would like to help me keep this page open. Whether it is, a small discount on your applications reserved for users of this site, or a coffee for me, don't hesitate to get in touch! I will be grateful!
+      </p>
+      <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="bg-white">
-    <div class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+    <div class="max-w-7xl mx-auto pt-10 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
       <div class="space-y-8 sm:space-y-12">
         <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">The People</h2>
-          <p class="text-xl text-gray-500">Risus velit condimentum vitae tincidunt tincidunt. Mauris ridiculus fusce amet urna nunc. Ut nisl ornare diam in.</p>
+          <h2 class="text-xl font-extrabold tracking-tight sm:text-4xl">The People</h2>
+          <p class="text-sm sm:text-base text-gray-500">As soon as i'll be able to set up the registration system, i want to mention all the people who will have contributed to the development of this that doesn't want to be a simple application, it is a place meant to be a welcoming home for all the programmers who pass by here. Thanks!</p>
         </div>
         <ul role="list" class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6">
           <li v-for="person in people" :key="person.name">
@@ -142,7 +175,7 @@
               <div class="space-y-2">
                 <div class="text-xs font-medium lg:text-sm">
                   <h3>{{ person.name }}</h3>
-                  <p class="text-indigo-600">{{ person.role }}</p>
+                  <p class="text-teal-600">{{ person.role }}</p>
                 </div>
               </div>
             </div>
@@ -154,10 +187,10 @@
 </template>
 
 <script>
-import {StarIcon, CalendarIcon } from '@heroicons/vue/solid'
+import { CalendarIcon } from '@heroicons/vue/solid'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/vue'
 
-const reviews = {
+const stacks = {
   average: 4,
   featured: [
     {
@@ -167,7 +200,7 @@ const reviews = {
       `,
       author: 'Vue JS',
       avatarSrc:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+          './img/vue_logo.webp',
     },
     {
       id: 2,
@@ -176,7 +209,7 @@ const reviews = {
       `,
       author: 'Laravel',
       avatarSrc:
-          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+          './img/laravel.webp',
     },
     {
       id: 3,
@@ -185,24 +218,48 @@ const reviews = {
       `,
       author: 'Tailwind CSS/UI',
       avatarSrc:
-          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+          './img/tailwind.webp',
     },
     // More reviews...
   ],
 }
-const faqs = [
-  {
-    question: 'What format are these icons?',
-    answer:
-        'The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.',
-  },
-  {
-    question: 'Can I use the icons at different sizes?',
-    answer:
-        "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
-  },
-  // More FAQs...
-]
+const nexts = {
+  average: 4,
+  featured: [
+    {
+      id: 1,
+      content: `
+        <p>I try my best to add as quickly as possible all the resources available to me at this time.</p>
+      `,
+      date: 'April 17, 2022',
+      author: '1 - Complete all resources',
+    },
+    {
+      id: 2,
+      content: `
+        <p>The section on links to API services is very long and transcribing it on this site takes a lot of time. I hope to be able to expedite it.</p>
+      `,
+      date: 'April 17, 2022',
+      author: '2 - Add APIs section',
+    },
+    {
+      id: 3,
+      content: `
+        <p>Soon I hope to launch a newsletter section so that I can keep you up to date on updates related to the platform..</p>
+      `,
+      date: 'April 17, 2022',
+      author: '3 - Add Newsletter',
+    },
+    {
+      id: 3,
+      content: `
+        <p>I'm still pondering how to set up the ability for you to share guides, articles, or how to update the list of available resources. I will keep you updated on developments.</p>
+      `,
+      date: 'April 17, 2022',
+      author: '4 - Add Articles section ',
+    },
+  ],
+}
 
 const About = {
   href: '#',
@@ -225,90 +282,11 @@ const About = {
 
 const people = [
   {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
+    name: 'Gianluca Tiengo',
+    role: 'Founder',
     imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+        './img/avatars/gianluca.webp',
   },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  // More people...
 ]
 
 export default {
@@ -325,8 +303,8 @@ export default {
   setup() {
     return {
       people,
-      reviews,
-      faqs,
+      stacks,
+      nexts,
       About,
     }
   },
