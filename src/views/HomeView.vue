@@ -159,7 +159,7 @@ const features = [
     description: 'Looking for one that fits your needs can be incredibly time-consuming. Here A collective list of free APIs for use in software and web development.',
     imageSrc: './img/development.webp',
     imageAlt: 'Green cardstock box containing white, beige, and brown cards.',
-    href:'',
+    href:'/publicapis',
   },
   {
     name: 'UI Graphics',
