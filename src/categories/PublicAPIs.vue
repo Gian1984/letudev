@@ -735,6 +735,741 @@ const auths = [
   }
 ]
 
+const blockchains = [
+  {
+    "API": "Bitquery",
+    "desc": "Onchain GraphQL APIs &amp; DEX APIs",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://graphql.bitquery.io/ide"
+  },
+  {
+    "API": "Chainlink",
+    "desc": "Build hybrid smart contracts with Chainlink",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://chain.link/developer-resources"
+  },
+  {
+    "API": "Chainpoint",
+    "desc": "Chainpoint is a global network for anchoring data to the Bitcoin blockchain",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tierion.com/chainpoint/"
+  },
+  {
+    "API": "Covalent",
+    "desc": "Multi-blockchain data aggregator platform",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.covalenthq.com/docs/api/"
+  },
+  {
+    "API": "Etherscan",
+    "desc": "Ethereum explorer API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://etherscan.io/apis"
+  },
+  {
+    "API": "Helium",
+    "desc": "Helium is a global, distributed network of Hotspots that create public, long-range wireless coverage",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.helium.com/api/blockchain/introduction/"
+  },
+  {
+    "API": "Nownodes",
+    "desc": "Blockchain-as-a-service solution that provides high-quality connection via API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://nownodes.io/"
+  },
+  {
+    "API": "Steem",
+    "desc": "Blockchain-based blogging and social media website",
+    "auth": "No",
+    "https": "No",
+    "cors": "No",
+    "href": "https://developers.steem.io/"
+  },
+  {
+    "API": "The Graph",
+    "desc": "Indexing protocol for querying networks like Ethereum with GraphQL",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://thegraph.com"
+  },
+  {
+    "API": "Walltime",
+    "desc": "To retrieve Walltime's market info",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://walltime.info/api.html"
+  },
+  {
+    "API": "Watchdata",
+    "desc": "Provide simple and reliable API access to Ethereum blockchain",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.watchdata.io"
+  }
+]
+
+const books = [
+  {
+    "api": "A Bíblia Digital",
+    "desc": "Do not worry about managing the multiple versions of the Bible",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://www.abibliadigital.com.br/en"
+  },
+  {
+    "api": "Bhagavad Gita",
+    "desc": "Open Source Shrimad Bhagavad Gita API including 21+ authors translation in Sanskrit/English/Hindi",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://docs.bhagavadgitaapi.in"
+  },
+  {
+    "api": "Bhagavad Gita",
+    "desc": "Bhagavad Gita text",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://bhagavadgita.io/api"
+  },
+  {
+    "api": "Bhagavad Gita telugu",
+    "desc": "Bhagavad Gita API in telugu and odia languages",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://gita-api.vercel.app"
+  },
+  {
+    "api": "Bible-api",
+    "desc": "Free Bible API with multiple languages",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://bible-api.com/"
+  },
+  {
+    "api": "British National Bibliography",
+    "desc": "Books",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://bnb.data.bl.uk/"
+  },
+  {
+    "api": "Crossref Metadata Search",
+    "desc": "Books & Articles Metadata",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/CrossRef/rest-api-doc"
+  },
+  {
+    "api": "Ganjoor",
+    "desc": "Classic Persian poetry works including access to related manuscripts, recitations and music tracks",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://api.ganjoor.net"
+  },
+  {
+    "api": "Google Books",
+    "desc": "Books",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/books/"
+  },
+  {
+    "api": "GurbaniNow",
+    "desc": "Fast and Accurate Gurbani RESTful API",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/GurbaniNow/api"
+  },
+  {
+    "api": "Gutendex",
+    "desc": "Web-API for fetching data from Project Gutenberg Books Library",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gutendex.com/"
+  },
+  {
+    "api": "Open Library",
+    "desc": "Books, book covers and related data",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://openlibrary.org/developers/api"
+  },
+  {
+    "api": "Penguin Publishing",
+    "desc": "Books, book covers and related data",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "http://www.penguinrandomhouse.biz/webservices/rest/"
+  },
+  {
+    "api": "PoetryDB",
+    "desc": "Enables you to get instant data from our vast poetry collection",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://github.com/thundercomb/poetrydb#readme"
+  },
+  {
+    "api": "Quran",
+    "desc": "RESTful Quran API with multiple languages",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://quran.api-docs.io/"
+  },
+  {
+    "api": "Quran Cloud",
+    "desc": "A RESTful Quran API to retrieve an Ayah, Surah, Juz or the entire Holy Quran",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://alquran.cloud/api"
+  },
+  {
+    "api": "Quran-api",
+    "desc": "Free Quran API Service with 90+ different languages and 400+ translations",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://github.com/fawazahmed0/quran-api#readme"
+  },
+  {
+    "api": "Rig Veda",
+    "desc": "Gods and poets, their categories, and the verse meters, with the mandal and sukta number",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://aninditabasu.github.io/indica/html/rv.html"
+  },
+  {
+    "api": "The Bible",
+    "desc": "Everything you need from the Bible in one discoverable place",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.api.bible"
+  },
+  {
+    "api": "Thirukkural",
+    "desc": "1330 Thirukkural poems and explanation in Tamil and English",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://api-thirukkural.web.app/"
+  },
+  {
+    "api": "Vedic Society",
+    "desc": "Descriptions of all nouns (names, places, animals, things) from vedic literature",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://aninditabasu.github.io/indica/html/vs.html"
+  },
+  {
+    "api": "Wizard World",
+    "desc": "Get information from the Harry Potter universe",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://wizard-world-api.herokuapp.com/swagger/index.html"
+  },
+  {
+    "api": "Wolne Lektury",
+    "desc": "API for obtaining information about e-books available on the WolneLektury.pl website",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://wolnelektury.pl/api/"
+  }
+]
+
+const business =[
+  {
+    "api": "Apache Superset",
+    "desc": "API to manage your BI dashboards and data sources on Superset",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://superset.apache.org/docs/api"
+  },
+  {
+    "api": "Charity Search",
+    "desc": "Non-profit charity data",
+    "auth": "apiKey",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://charityapi.orghunter.com/"
+  },
+  {
+    "api": "Clearbit Logo",
+    "desc": "Search for company logos and embed them in your projects",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://clearbit.com/docs#logo-api"
+  },
+  {
+    "api": "Domainsdb.info",
+    "desc": "Registered Domain Names Search",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://domainsdb.info/"
+  },
+  {
+    "api": "Freelancer",
+    "desc": "Hire freelancers to get work done",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.freelancer.com"
+  },
+  {
+    "api": "Gmail",
+    "desc": "Flexible, RESTful access to the user's inbox",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/gmail/api/"
+  },
+  {
+    "api": "Google Analytics",
+    "desc": "Collect, configure and analyze your data to reach the right audience",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/gmail/api/"
+  },
+  {
+    "api": "Instatus",
+    "desc": "Post to and update maintenance and incidents on your status page through an HTTP REST API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://instatus.com/help/api"
+  },
+  {
+    "api": "Mailchimp",
+    "desc": "Send marketing campaigns and transactional mails",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://mailchimp.com/developer/"
+  },
+  {
+    "api": "mailjet",
+    "desc": "Marketing email can be sent and mail templates made in MJML or HTML can be sent using API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.mailjet.com/"
+  },
+  {
+    "api": "markerapi",
+    "desc": "Trademark Search",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://markerapi.com"
+  },
+  {
+    "api": "ORB Intelligence",
+    "desc": "Company lookup",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://api.orb-intelligence.com/docs/"
+  },
+  {
+    "api": "Redash",
+    "desc": "Access your queries and dashboards on Redash",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://redash.io/help/user-guide/integrations-and-api/api"
+  },
+  {
+    "api": "Smartsheet",
+    "desc": "Allows you to programmatically access and Smartsheet data and account information",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://smartsheet.redoc.ly/"
+  },
+  {
+    "api": "Square",
+    "desc": "Easy way to take payments, manage refunds, and help customers checkout online",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.squareup.com/reference/square"
+  },
+  {
+    "api": "SwiftKanban",
+    "desc": "Kanban software, Visualize Work, Increase Organizations Lead Time, Throughput &amp; Productivity",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.digite.com/knowledge-base/swiftkanban/article/api-for-swift-kanban-web-services/#restapi"
+  },
+  {
+    "api": "Tenders in Hungary",
+    "desc": "Get data for procurements in Hungary in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/hu/api"
+  },
+  {
+    "api": "Tenders in Poland",
+    "desc": "Get data for procurements in Poland in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/pl/api"
+  },
+  {
+    "api": "Tenders in Romania",
+    "desc": "Get data for procurements in Romania in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/ro/api"
+  },
+  {
+    "api": "Tenders in Spain",
+    "desc": "Get data for procurements in Spain in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/es/api"
+  },
+  {
+    "api": "Tenders in Ukraine",
+    "desc": "Get data for procurements in Ukraine in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/ua/api"
+  },
+  {
+    "api": "Tomba email finder",
+    "desc": "Email Finder for B2B sales and email marketing and email verifier",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://tomba.io/api"
+  },
+  {
+    "api": "Trello",
+    "desc": "Boards, lists and cards to help you organize and prioritize your projects",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.trello.com/"
+  }
+]
+
+const calendars = [
+  {
+    "api": "Abstract Public Holidays",
+    "desc": "Data on national, regional, and religious holidays via API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://www.abstractapi.com/holidays-api"
+  },
+  {
+    "api": "Calendarific",
+    "desc": "Worldwide Holidays",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://calendarific.com/"
+  },
+  {
+    "api": "Church Calendar",
+    "desc": "Catholic liturgical calendar",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://calapi.inadiutorium.cz/"
+  },
+  {
+    "api": "Czech Namedays Calendar",
+    "desc": "Lookup for a name and returns nameday date",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://svatky.adresa.info"
+  },
+  {
+    "api": "Festivo Public Holidays",
+    "desc": "Fastest and most advanced public holiday and observance service on the market",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://docs.getfestivo.com/docs/products/public-holidays-api/intro"
+  },
+  {
+    "api": "Google Calendar",
+    "desc": "Display, create and modify Google calendar events",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/google-apps/calendar/"
+  },
+  {
+    "api": "Hebrew Calendar",
+    "desc": "Convert between Gregorian and Hebrew, fetch Shabbat and Holiday times, etc",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://www.hebcal.com/home/developer-apis"
+  },
+  {
+    "api": "Holidays",
+    "desc": "Historical data regarding holidays",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://holidayapi.com/"
+  },
+  {
+    "api": "LectServe",
+    "desc": "Protestant liturgical calendar",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://www.lectserve.com"
+  },
+  {
+    "api": "Nager.Date",
+    "desc": "Public holidays for more than 90 countries",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://date.nager.at"
+  },
+  {
+    "api": "Namedays Calendar",
+    "desc": "Provides namedays for multiple countries",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://nameday.abalin.net"
+  },
+  {
+    "api": "Non-Working Days",
+    "desc": "Database of ICS files for non working days",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/gadael/icsdb"
+  },
+  {
+    "api": "Non-Working Days",
+    "desc": "Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://isdayoff.ru"
+  },
+  {
+    "api": "Russian Calendar",
+    "desc": "Check if a date is a Russian holiday or not",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://github.com/egno/work-calendar"
+  },
+  {
+    "api": "UK Bank Holidays",
+    "desc": "Bank holidays in England and Wales, Scotland and Northern Ireland",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.gov.uk/bank-holidays.json"
+  }
+]
+
+const storeShare = [
+  {
+    "api": "AnonFiles",
+    "desc": "Upload and share your files anonymously",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://anonfiles.com/docs/api"
+  },
+  {
+    "api": "BayFiles",
+    "desc": "Upload and share your files",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://bayfiles.com/docs/api"
+  },
+  {
+    "api": "Box",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.box.com/"
+  },
+  {
+    "api": "ddownload",
+    "desc": "File Sharing and Storage",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://ddownload.com/api"
+  },
+  {
+    "api": "Dropbox",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.dropbox.com/developers"
+  },
+  {
+    "api": "File.io",
+    "desc": "Super simple file sharing, convenient, anonymous and secure",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.file.io"
+  },
+  {
+    "api": "GoFile",
+    "desc": "Unlimited size file uploads for free",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gofile.io/api"
+  },
+  {
+    "api": "Google Drive",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/drive/"
+  },
+  {
+    "api": "Gyazo",
+    "desc": "Save &amp; Share screen captures instantly",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gyazo.com/api/docs"
+  },
+  {
+    "api": "Imgbb",
+    "desc": "Simple and quick private image sharing",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://api.imgbb.com/"
+  },
+  {
+    "api": "OneDrive",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.microsoft.com/onedrive"
+  },
+  {
+    "api": "Pantry",
+    "desc": "Free JSON storage for small projects",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://getpantry.cloud/"
+  },
+  {
+    "api": "Pastebin",
+    "desc": "Plain Text Storage",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://pastebin.com/doc_api"
+  },
+  {
+    "api": "Pinata",
+    "desc": "IPFS Pinning Services API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.pinata.cloud/"
+  },
+  {
+    "api": "Quip",
+    "desc": "File Sharing and Storage for groups",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://quip.com/dev/automation/documentation"
+  },
+  {
+    "api": "Storj",
+    "desc": "Decentralized Open-Source Cloud Storage",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.storj.io/dcs/"
+  },
+  {
+    "api": "The Null Pointer",
+    "desc": "No-bullshit file hosting and URL shortening service",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://0x0.st"
+  },
+  {
+    "api": "Web3 Storage",
+    "desc": "File Sharing and Storage for Free with 1TB Space",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://web3.storage/"
+  }
+]
+
 export default {
   setup() {
     return {
@@ -742,7 +1477,12 @@ export default {
       animes,
       antiMalwares,
       artDesigns,
-      auths
+      auths,
+      blockchains,
+      books,
+      business,
+      calendars,
+      storeShare
     }
   },
 
