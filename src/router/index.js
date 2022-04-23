@@ -36,6 +36,7 @@ import VectorsClip from "../categories/VectorsClip.vue"
 import VueUILibraries from "../categories/VueUILibraries.vue"
 import AnimationLibraries from "../categories/AnimationJSLibraries.vue"
 import PublicAPIs from "../categories/PublicAPIs.vue"
+import AnimalsApi from "../apis/AnimalsApi.vue"
 
 
 
@@ -696,6 +697,24 @@ const router = createRouter({
       component: PublicAPIs,
       meta: {
         title: 'Resources Public APIs',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/animalsapi',
+      name:'animalsapi',
+      component: AnimalsApi,
+      meta: {
+        title: 'Public APIs - Animals',
         metaTags: [
           {
             name: 'description',

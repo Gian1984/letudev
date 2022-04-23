@@ -17,17 +17,18 @@
             </div>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:items-center">
-            <button type="button" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+            <button @click="searchNav = !searchNav" type="button" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
               <span class="sr-only">View notifications</span>
-              <BellIcon class="h-6 w-6" aria-hidden="true" />
+              <SearchIcon class="h-6 w-6" aria-hidden="true" />
             </button>
+
 
             <!-- Profile dropdown -->
 <!--            <Menu as="div" class="ml-3 relative">-->
 <!--              <div>-->
 <!--                <MenuButton class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">-->
 <!--                  <span class="sr-only">Open user menu</span>-->
-<!--                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />-->
+<!--                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="user" />-->
 <!--                </MenuButton>-->
 <!--              </div>-->
 <!--              <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">-->
@@ -83,7 +84,7 @@
 <!--        <div class="pt-4 pb-3 border-t border-gray-200">-->
 <!--          <div class="flex items-center px-4">-->
 <!--            <div class="flex-shrink-0">-->
-<!--              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />-->
+<!--              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="user_icon" />-->
 <!--            </div>-->
 <!--            <div class="ml-3">-->
 <!--              <div class="text-base font-medium text-gray-800">Tom Cook</div>-->
@@ -105,6 +106,15 @@
   </nav>
 
   <RouterView />
+  <div v-if="searchNav" >
+    <div class="max-h-96 mx-auto fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:my-20 overflow-hidden bg-white bg-opacity-20 ring-opacity-5 backdrop-blur backdrop-filter text-black">
+      <button class="rounded-full bg-teal-500 p-1" @click="searchNav = !searchNav">
+      <XIcon class="h-4 w-4 text-white"/>
+      </button>
+    </div>
+    <SearchNav />
+  </div>
+
 
   <footer class="bg-gray-300" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -135,7 +145,7 @@
                 <div class="optionalParent">
                   <div class="clear foot">
                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button bg-teal-600 hover:bg-teal-700">
-                    <p class="brandingLogo"><a href="http://eepurl.com/hZQM4b" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                    <p class="brandingLogo"><a href="http://eepurl.com/hZQM4b" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="mailchimp"></a></p>
                   </div>
                 </div>
               </div>
@@ -167,9 +177,10 @@
 
 <script>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
+import {  MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { defineComponent, h } from 'vue'
-import { ChevronDownIcon } from '@heroicons/vue/solid'
+import { ChevronDownIcon, SearchIcon } from '@heroicons/vue/solid'
+import SearchNav from "./components/SearchNav.vue";
 
 const navigation = {
   solutions: [
@@ -258,6 +269,11 @@ const navigation = {
 }
 
 export default {
+  data() {
+    return{
+      searchNav: false
+    }
+  },
 
   components: {
     ChevronDownIcon,
@@ -268,9 +284,10 @@ export default {
     MenuButton,
     MenuItem,
     MenuItems,
-    BellIcon,
+    SearchIcon,
     MenuIcon,
     XIcon,
+    SearchNav
   },
 
   setup() {
