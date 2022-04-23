@@ -40,7 +40,11 @@ import AnimalsApi from "../apis/AnimalsApi.vue"
 import AnimesApi from "../apis/AnimesApi.vue"
 import AntimalwaresApi from "../apis/AntimalwaresApi.vue"
 import ArtdesignApi from "../apis/ArtdesignApi.vue";
-
+import AuthApi from "../apis/AuthApi.vue"
+import BlockchainApi from "../apis/BlockchainApi.vue"
+import BookApi from "../apis/BookApi.vue"
+import BusinessApi from "../apis/BusinessApi.vue"
+import CalendarApi from "../apis/CalendarApi.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -779,6 +783,96 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about art & design for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/authapis',
+      name:'authapi',
+      component: AuthApi,
+      meta: {
+        title: 'Public APIs - Authentication & authorization',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about authentication & authorization for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about authentication & authorization for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/blockchainapi',
+      name:'blockchainapi',
+      component: BlockchainApi,
+      meta: {
+        title: 'Public APIs - Blockchain',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about blockchain for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about blockchain for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/bookapi',
+      name:'bookapi',
+      component: BookApi,
+      meta: {
+        title: 'Public APIs - Books',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about books for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about books for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/businessapi',
+      name:'businessapi',
+      component: BusinessApi,
+      meta: {
+        title: 'Public APIs - Business',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about business for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about business for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/calendarapi',
+      name:'calendarapi',
+      component: CalendarApi,
+      meta: {
+        title: 'Public APIs - Business',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about calendars for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about calendars for use in software and web development.'
           }
         ]
       },

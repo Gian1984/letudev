@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/authapis" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Authentication & Authorization</router-link>
+                    <router-link to="/blockchainapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Blockchain</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Authentication & Authorization </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Blockchain </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Authentication & Authorization</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Blockchain</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Authentication & Authorization</span>
+              <span class="lg:pl-2">Blockchain</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -145,60 +145,92 @@ import moment from "moment";
 
 const apis = [
   {
-    "api": "Auth0",
-    "desc": "Easy to implement, adaptable authentication and authorization platform",
+    "api": "Bitquery",
+    "desc": "Onchain GraphQL APIs &amp; DEX APIs",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://auth0.com"
+    "href": "https://graphql.bitquery.io/ide"
   },
   {
-    "api": "GetOTP",
-    "desc": "Implement OTP flow quickly",
+    "api": "Chainlink",
+    "desc": "Build hybrid smart contracts with Chainlink",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://chain.link/developer-resources"
+  },
+  {
+    "api": "Chainpoint",
+    "desc": "Chainpoint is a global network for anchoring data to the Bitcoin blockchain",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tierion.com/chainpoint/"
+  },
+  {
+    "api": "Covalent",
+    "desc": "Multi-blockchain data aggregator platform",
     "auth": "apiKey",
     "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.covalenthq.com/docs/api/"
+  },
+  {
+    "api": "Etherscan",
+    "desc": "Ethereum explorer API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://etherscan.io/apis"
+  },
+  {
+    "api": "Helium",
+    "desc": "Helium is a global, distributed network of Hotspots that create public, long-range wireless coverage",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.helium.com/api/blockchain/introduction/"
+  },
+  {
+    "api": "Nownodes",
+    "desc": "Blockchain-as-a-service solution that provides high-quality connection via API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://nownodes.io/"
+  },
+  {
+    "api": "Steem",
+    "desc": "Blockchain-based blogging and social media website",
+    "auth": "No",
+    "https": "No",
     "cors": "No",
-    "href": "https://otp.dev/en/docs/"
+    "href": "https://developers.steem.io/"
   },
   {
-    "api": "Micro User Service",
-    "desc": "User management and authentication",
+    "api": "The Graph",
+    "desc": "Indexing protocol for querying networks like Ethereum with GraphQL",
     "auth": "apiKey",
     "https": "Yes",
-    "cors": "No",
-    "href": "https://m3o.com/user"
+    "cors": "Unknown",
+    "href": "https://thegraph.com"
   },
   {
-    "api": "MojoAuth",
-    "desc": "Secure and modern passwordless authentication platform",
-    "auth": "apiKey",
+    "api": "Walltime",
+    "desc": "To retrieve Walltime's market info",
+    "auth": "No",
     "https": "Yes",
-    "cors": "Yes",
-    "href": "https://mojoauth.com"
+    "cors": "Unknown",
+    "href": "https://walltime.info/api.html"
   },
   {
-    "api": "SAWO Labs",
-    "desc": "Simplify login and improve user experience by integrating passwordless authentication in your app",
+    "api": "Watchdata",
+    "desc": "Provide simple and reliable API access to Ethereum blockchain",
     "auth": "apiKey",
     "https": "Yes",
-    "cors": "Yes",
-    "href": "https://sawolabs.com"
-  },
-  {
-    "api": "Stytch",
-    "desc": "User infrastructure for modern applications",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://stytch.com/"
-  },
-  {
-    "api": "Warrant",
-    "desc": "APIs for authorization and access control",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://warrant.dev/"
+    "cors": "Unknown",
+    "href": "https://docs.watchdata.io"
   }
 ]
 

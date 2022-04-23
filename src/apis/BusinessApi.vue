@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/authapis" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Authentication & Authorization</router-link>
+                    <router-link to="/businessapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Business</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Authentication & Authorization </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Business </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Authentication & Authorization</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Business</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Authentication & Authorization</span>
+              <span class="lg:pl-2">Business</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -143,62 +143,190 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/solid'
 import { CalendarIcon, ArrowCircleRightIcon } from '@heroicons/vue/outline'
 import moment from "moment";
 
-const apis = [
+const apis =[
   {
-    "api": "Auth0",
-    "desc": "Easy to implement, adaptable authentication and authorization platform",
+    "api": "Apache Superset",
+    "desc": "API to manage your BI dashboards and data sources on Superset",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://auth0.com"
+    "href": "https://superset.apache.org/docs/api"
   },
   {
-    "api": "GetOTP",
-    "desc": "Implement OTP flow quickly",
+    "api": "Charity Search",
+    "desc": "Non-profit charity data",
     "auth": "apiKey",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://charityapi.orghunter.com/"
+  },
+  {
+    "api": "Clearbit Logo",
+    "desc": "Search for company logos and embed them in your projects",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://clearbit.com/docs#logo-api"
+  },
+  {
+    "api": "Domainsdb.info",
+    "desc": "Registered Domain Names Search",
+    "auth": "No",
     "https": "Yes",
     "cors": "No",
-    "href": "https://otp.dev/en/docs/"
+    "href": "https://domainsdb.info/"
   },
   {
-    "api": "Micro User Service",
-    "desc": "User management and authentication",
+    "api": "Freelancer",
+    "desc": "Hire freelancers to get work done",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.freelancer.com"
+  },
+  {
+    "api": "Gmail",
+    "desc": "Flexible, RESTful access to the user's inbox",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/gmail/api/"
+  },
+  {
+    "api": "Google Analytics",
+    "desc": "Collect, configure and analyze your data to reach the right audience",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/gmail/api/"
+  },
+  {
+    "api": "Instatus",
+    "desc": "Post to and update maintenance and incidents on your status page through an HTTP REST API",
     "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://instatus.com/help/api"
+  },
+  {
+    "api": "Mailchimp",
+    "desc": "Send marketing campaigns and transactional mails",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://mailchimp.com/developer/"
+  },
+  {
+    "api": "mailjet",
+    "desc": "Marketing email can be sent and mail templates made in MJML or HTML can be sent using API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.mailjet.com/"
+  },
+  {
+    "api": "markerapi",
+    "desc": "Trademark Search",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://markerapi.com"
+  },
+  {
+    "api": "ORB Intelligence",
+    "desc": "Company lookup",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://api.orb-intelligence.com/docs/"
+  },
+  {
+    "api": "Redash",
+    "desc": "Access your queries and dashboards on Redash",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://redash.io/help/user-guide/integrations-and-api/api"
+  },
+  {
+    "api": "Smartsheet",
+    "desc": "Allows you to programmatically access and Smartsheet data and account information",
+    "auth": "OAuth",
     "https": "Yes",
     "cors": "No",
-    "href": "https://m3o.com/user"
+    "href": "https://smartsheet.redoc.ly/"
   },
   {
-    "api": "MojoAuth",
-    "desc": "Secure and modern passwordless authentication platform",
+    "api": "Square",
+    "desc": "Easy way to take payments, manage refunds, and help customers checkout online",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.squareup.com/reference/square"
+  },
+  {
+    "api": "SwiftKanban",
+    "desc": "Kanban software, Visualize Work, Increase Organizations Lead Time, Throughput &amp; Productivity",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.digite.com/knowledge-base/swiftkanban/article/api-for-swift-kanban-web-services/#restapi"
+  },
+  {
+    "api": "Tenders in Hungary",
+    "desc": "Get data for procurements in Hungary in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/hu/api"
+  },
+  {
+    "api": "Tenders in Poland",
+    "desc": "Get data for procurements in Poland in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/pl/api"
+  },
+  {
+    "api": "Tenders in Romania",
+    "desc": "Get data for procurements in Romania in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/ro/api"
+  },
+  {
+    "api": "Tenders in Spain",
+    "desc": "Get data for procurements in Spain in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/es/api"
+  },
+  {
+    "api": "Tenders in Ukraine",
+    "desc": "Get data for procurements in Ukraine in JSON format",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://tenders.guru/ua/api"
+  },
+  {
+    "api": "Tomba email finder",
+    "desc": "Email Finder for B2B sales and email marketing and email verifier",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://mojoauth.com"
+    "href": "https://tomba.io/api"
   },
   {
-    "api": "SAWO Labs",
-    "desc": "Simplify login and improve user experience by integrating passwordless authentication in your app",
-    "auth": "apiKey",
+    "api": "Trello",
+    "desc": "Boards, lists and cards to help you organize and prioritize your projects",
+    "auth": "OAuth",
     "https": "Yes",
-    "cors": "Yes",
-    "href": "https://sawolabs.com"
-  },
-  {
-    "api": "Stytch",
-    "desc": "User infrastructure for modern applications",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://stytch.com/"
-  },
-  {
-    "api": "Warrant",
-    "desc": "APIs for authorization and access control",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://warrant.dev/"
+    "cors": "Unknown",
+    "href": "https://developers.trello.com/"
   }
 ]
 

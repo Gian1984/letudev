@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/authapis" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Authentication & Authorization</router-link>
+                    <router-link to="/blockchainapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Books</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Authentication & Authorization </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Books </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Authentication & Authorization</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Books</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Authentication & Authorization</span>
+              <span class="lg:pl-2">Books</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -145,60 +145,188 @@ import moment from "moment";
 
 const apis = [
   {
-    "api": "Auth0",
-    "desc": "Easy to implement, adaptable authentication and authorization platform",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://auth0.com"
-  },
-  {
-    "api": "GetOTP",
-    "desc": "Implement OTP flow quickly",
+    "api": "A Bíblia Digital",
+    "desc": "Do not worry about managing the multiple versions of the Bible",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "No",
-    "href": "https://otp.dev/en/docs/"
+    "href": "https://www.abibliadigital.com.br/en"
   },
   {
-    "api": "Micro User Service",
-    "desc": "User management and authentication",
+    "api": "Bhagavad Gita",
+    "desc": "Open Source Shrimad Bhagavad Gita API including 21+ authors translation in Sanskrit/English/Hindi",
     "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://docs.bhagavadgitaapi.in"
+  },
+  {
+    "api": "Bhagavad Gita",
+    "desc": "Bhagavad Gita text",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://bhagavadgita.io/api"
+  },
+  {
+    "api": "Bhagavad Gita telugu",
+    "desc": "Bhagavad Gita API in telugu and odia languages",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://gita-api.vercel.app"
+  },
+  {
+    "api": "Bible-api",
+    "desc": "Free Bible API with multiple languages",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://bible-api.com/"
+  },
+  {
+    "api": "British National Bibliography",
+    "desc": "Books",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://bnb.data.bl.uk/"
+  },
+  {
+    "api": "Crossref Metadata Search",
+    "desc": "Books & Articles Metadata",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/CrossRef/rest-api-doc"
+  },
+  {
+    "api": "Ganjoor",
+    "desc": "Classic Persian poetry works including access to related manuscripts, recitations and music tracks",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://api.ganjoor.net"
+  },
+  {
+    "api": "Google Books",
+    "desc": "Books",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/books/"
+  },
+  {
+    "api": "GurbaniNow",
+    "desc": "Fast and Accurate Gurbani RESTful API",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/GurbaniNow/api"
+  },
+  {
+    "api": "Gutendex",
+    "desc": "Web-API for fetching data from Project Gutenberg Books Library",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gutendex.com/"
+  },
+  {
+    "api": "Open Library",
+    "desc": "Books, book covers and related data",
+    "auth": "No",
     "https": "Yes",
     "cors": "No",
-    "href": "https://m3o.com/user"
+    "href": "https://openlibrary.org/developers/api"
   },
   {
-    "api": "MojoAuth",
-    "desc": "Secure and modern passwordless authentication platform",
-    "auth": "apiKey",
+    "api": "Penguin Publishing",
+    "desc": "Books, book covers and related data",
+    "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://mojoauth.com"
+    "href": "http://www.penguinrandomhouse.biz/webservices/rest/"
   },
   {
-    "api": "SAWO Labs",
-    "desc": "Simplify login and improve user experience by integrating passwordless authentication in your app",
-    "auth": "apiKey",
+    "api": "PoetryDB",
+    "desc": "Enables you to get instant data from our vast poetry collection",
+    "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://sawolabs.com"
+    "href": "https://github.com/thundercomb/poetrydb#readme"
   },
   {
-    "api": "Stytch",
-    "desc": "User infrastructure for modern applications",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://stytch.com/"
-  },
-  {
-    "api": "Warrant",
-    "desc": "APIs for authorization and access control",
-    "auth": "apiKey",
+    "api": "Quran",
+    "desc": "RESTful Quran API with multiple languages",
+    "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://warrant.dev/"
+    "href": "https://quran.api-docs.io/"
+  },
+  {
+    "api": "Quran Cloud",
+    "desc": "A RESTful Quran API to retrieve an Ayah, Surah, Juz or the entire Holy Quran",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://alquran.cloud/api"
+  },
+  {
+    "api": "Quran-api",
+    "desc": "Free Quran API Service with 90+ different languages and 400+ translations",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://github.com/fawazahmed0/quran-api#readme"
+  },
+  {
+    "api": "Rig Veda",
+    "desc": "Gods and poets, their categories, and the verse meters, with the mandal and sukta number",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://aninditabasu.github.io/indica/html/rv.html"
+  },
+  {
+    "api": "The Bible",
+    "desc": "Everything you need from the Bible in one discoverable place",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.api.bible"
+  },
+  {
+    "api": "Thirukkural",
+    "desc": "1330 Thirukkural poems and explanation in Tamil and English",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://api-thirukkural.web.app/"
+  },
+  {
+    "api": "Vedic Society",
+    "desc": "Descriptions of all nouns (names, places, animals, things) from vedic literature",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://aninditabasu.github.io/indica/html/vs.html"
+  },
+  {
+    "api": "Wizard World",
+    "desc": "Get information from the Harry Potter universe",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://wizard-world-api.herokuapp.com/swagger/index.html"
+  },
+  {
+    "api": "Wolne Lektury",
+    "desc": "API for obtaining information about e-books available on the WolneLektury.pl website",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://wolnelektury.pl/api/"
   }
 ]
 
