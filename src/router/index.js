@@ -39,6 +39,7 @@ import PublicAPIs from "../categories/PublicAPIs.vue"
 import AnimalsApi from "../apis/AnimalsApi.vue"
 import AnimesApi from "../apis/AnimesApi.vue"
 import AntimalwaresApi from "../apis/AntimalwaresApi.vue"
+import ArtdesignApi from "../apis/ArtdesignApi.vue";
 
 
 const router = createRouter({
@@ -760,6 +761,24 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about anti-malwares for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/artdesignapi',
+      name:'artdesignapi',
+      component: ArtdesignApi,
+      meta: {
+        title: 'Public APIs - Art & design',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about art & design for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about art & design for use in software and web development.'
           }
         ]
       },

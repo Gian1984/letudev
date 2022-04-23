@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/antimalwaresapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Anti-Malware</router-link>
+                    <router-link to="/artdesignapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Art & design</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Anti-Malware </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Art & design </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Anti-Malware</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Art & design</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Anti-Malware</span>
+              <span class="lg:pl-2">Art & design</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -134,6 +134,7 @@
       </div>
     </div>
   </main>
+
 </template>
 
 <script>
@@ -144,124 +145,164 @@ import moment from "moment";
 
 const apis = [
   {
-    "api": "AbuseIPDB",
-    "desc": "IP/domain/URL reputation",
+    "api": "Améthyste",
+    "desc": "Generate images for Discord users",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://docs.abuseipdb.com/"
+    "href": "https://api.amethyste.moe/"
   },
   {
-    "api": "AlienVault Open Threat Exchange (OTX)",
-    "desc": "IP/domain/URL reputation",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://otx.alienvault.com/api"
-  },
-  {
-    "api": "CAPEsandbox",
-    "desc": "Malware execution and analysis",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://capev2.readthedocs.io/en/latest/usage/api.html"
-  },
-  {
-    "api": "Google Safe Browsing",
-    "desc": "Google Link/Domain Flagging",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://developers.google.com/safe-browsing/"
-  },
-  {
-    "api": "MalDatabase",
-    "desc": "Provide malware datasets and threat intelligence feeds",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://maldatabase.com/api-doc.html\" rel"
-  },
-  {
-    "api": "MalShare",
-    "desc": "Malware Archive / file sourcing",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://malshare.com/doc.php"
-  },
-  {
-    "api": "MalwareBazaar",
-    "desc": "Collect and share malware samples",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://bazaar.abuse.ch/api/"
-  },
-  {
-    "api": "Metacert",
-    "desc": "Metacert Link Flagging",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://metacert.com/"
-  },
-  {
-    "api": "NoPhishy",
-    "desc": "Check links to see if they're known phishing attempts",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://rapidapi.com/Amiichu/api/exerra-phishing-check/"
-  },
-  {
-    "api": "Phisherman",
-    "desc": "IP/domain/URL reputation",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://phisherman.gg/"
-  },
-  {
-    "api": "Scanii",
-    "desc": "Simple REST API that can scan submitted documents/files for the presence of threats",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "ttps://docs.scanii.com/"
-  },
-  {
-    "api": "URLhaus",
-    "desc": "Bulk queries and Download Malware Samples",
+    "api": "Art Institute of Chicago",
+    "desc": "Art",
     "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://urlhaus-api.abuse.ch/"
+    "href": "https://api.artic.edu/docs/"
   },
   {
-    "api": "URLScan.io",
-    "desc": "Scan and Analyse URLs",
+    "api": "Colormind",
+    "desc": "Color scheme generator",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://colormind.io/api-access/"
+  },
+  {
+    "api": "ColourLovers",
+    "desc": "Get various patterns, palettes and images",
+    "auth": "No",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://www.colourlovers.com/api"
+  },
+  {
+    "api": "Cooper Hewitt",
+    "desc": "Smithsonian Design Museum",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://urlscan.io/about-api/"
+    "href": "https://collection.cooperhewitt.org/api"
   },
   {
-    "api": "VirusTotal",
-    "desc": "VirusTotal File/URL Analysis",
+    "api": "Dribbble",
+    "desc": "Discover the world’s top designers &amp; creatives",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.dribbble.com"
+  },
+  {
+    "api": "EmojiHub",
+    "desc": "Get emojis by categories and groups",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://github.com/cheatsnake/emojihub"
+  },
+  {
+    "api": "Europeana",
+    "desc": "European Museum and Galleries content",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://www.virustotal.com/en/documentation/public-api/"
+    "href": "https://pro.europeana.eu/resources/apis/search"
   },
   {
-    "api": "Web of Trust",
-    "desc": "IP/domain/URL reputation",
+    "api": "Harvard Art Museums",
+    "desc": "Art",
+    "auth": "apiKey",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://github.com/harvardartmuseums/api-docs"
+  },
+  {
+    "api": "Icon Horse",
+    "desc": "Favicons for any website, with fallbacks",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://icon.horse"
+  },
+  {
+    "api": "Iconfinder",
+    "desc": "Icons",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://support.mywot.com/hc/en-us/sections/360004477734-API-"
+    "href": "https://developer.iconfinder.com"
+  },
+  {
+    "api": "Icons8",
+    "desc": "Icons (find \"search icon\" hyperlink in page)",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://img.icons8.com/"
+  },
+  {
+    "api": "Lordicon",
+    "desc": "Icons with predone Animations",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://lordicon.com/"
+  },
+  {
+    "api": "Metropolitan Museum of Art",
+    "desc": "Met Museum of Art",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://metmuseum.github.io/"
+  },
+  {
+    "api": "Noun Project",
+    "desc": "Icons",
+    "auth": "OAuth",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "http://api.thenounproject.com/index.html"
+  },
+  {
+    "api": "PHP-Noise",
+    "desc": "Noise Background Image Generator",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://php-noise.com/"
+  },
+  {
+    "api": "Pixel Encounter",
+    "desc": "SVG Icon Generator",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "ttps://pixelencounter.com/api"
+  },
+  {
+    "api": "Rijksmuseum",
+    "desc": "RijksMuseum Data",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://data.rijksmuseum.nl/object-metadata/api/"
+  },
+  {
+    "api": "Word Cloud",
+    "desc": "Easily create word clouds",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://wordcloudapi.com/"
+  },
+  {
+    "api": "xColors",
+    "desc": "Generate &amp; convert colors",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://x-colors.herokuapp.com/"
   }
 ]
 
@@ -273,12 +314,14 @@ export default {
     ArrowCircleRightIcon
   },
 
+
   setup() {
     return {
       apis,
       moment
     }
   },
+
 
 }
 </script>
