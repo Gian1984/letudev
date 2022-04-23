@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/animalsapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Animals</router-link>
+                    <router-link to="/animesapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Animes</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Animals </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Animes </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Animals</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Animes</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Animals</span>
+              <span class="lg:pl-2">Animes</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -146,220 +146,156 @@ import moment from "moment";
 
 const apis = [
   {
-    api: "AdoptAPet",
-    desc: "Resource to help get pets adopted",
-    auth: "apiKey",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://www.adoptapet.com/public/apis/pet_list.html\""
+    "api": "AniAPI",
+    "desc": "Anime discovery, streaming & syncing with trackers",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://aniapi.com/docs/"
   },
   {
-    api: "Axolotl",
-    desc: "Collection of axolotl pictures and facts",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://theaxolotlapi.netlify.app/"
+    "api": "AniDB",
+    "desc": "Anime Database",
+    "auth": "apiKey",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://wiki.anidb.net/HTTP_API_Definition"
   },
   {
-    api: "Cat Facts",
-    desc: "Daily cat facts",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://alexwohlbruck.github.io/cat-facts/"
+    "api": "AniList",
+    "desc": "Anime discovery & tracking",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://github.com/AniList/ApiV2-GraphQL-Docs"
   },
   {
-    api: "Cataas",
-    desc: "Cat as a service (cats pictures and gifs)",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://cataas.com/"
+    "api": "AnimeChan",
+    "desc": "Anime quotes (over 10k+)",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://github.com/RocktimSaikia/anime-chan"
   },
   {
-    api: "Cats",
-    desc: "Pictures of cats from Tumblr",
-    auth: "apiKey",
-    https: "Yes",
-    cors: "No",
-    href: "https://docs.thecatapi.com/"
+    "api": "AnimeFacts",
+    "desc": "Anime Facts (over 100+)",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://chandan-02.github.io/anime-facts-rest-api/"
   },
   {
-    api: "Dog Facts",
-    desc: "Random dog facts",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://dukengn.github.io/Dog-facts-API/"
+    "api": "AnimeNewsNetwork",
+    "desc": "Anime industry news",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://www.animenewsnetwork.com/encyclopedia/api.php"
   },
   {
-    api: "Dog Facts",
-    desc: "Random facts of Dogs",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://kinduff.github.io/dog-api/"
+    "api": "Catboy",
+    "desc": "Neko images, funny GIFs & more",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://catboys.com/api"
   },
   {
-    api: "Dogs",
-    desc: "Based on the Stanford Dogs Dataset",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://dog.ceo/dog-api/"
+    "api": "Danbooru Anime",
+    "desc": "Thousands of anime artist database to find good anime art",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://danbooru.donmai.us/wiki_pages/help:api"
   },
   {
-    api: "eBird",
-    desc: "Retrieve recent or notable birding observations within a region",
-    auth: "apiKey",
-    https: "Yes",
-    cors: "No",
-    href: "https://documenter.getpostman.com/view/664302/S1ENwy59"
+    "api": "Jikan",
+    "desc": "Unofficial MyAnimeList API",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://jikan.moe"
   },
   {
-    api: "FishWatch",
-    desc: "Information and pictures about individual fish species",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://www.fishwatch.gov/developers"
+    "api": "Kitsu",
+    "desc": "Anime discovery platform",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://kitsu.docs.apiary.io/"
   },
   {
-    api: "HTTP Cat",
-    desc: "Cat for every HTTP Status",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://http.cat/"
+    "api": "MangaDex",
+    "desc": "Manga Database and Community",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://api.mangadex.org/docs.html"
   },
   {
-    api: "HTTP Dog",
-    desc: "Dogs for every HTTP response status code",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://http.dog/"
+    "api": "Mangapi",
+    "desc": "Translate manga pages from one language to another",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://rapidapi.com/pierre.carcellermeunier/api/mangapi3/"
   },
   {
-    api: "IUCN",
-    desc: "IUCN Red List of Threatened Species",
-    auth: "apiKey",
-    https: "No",
-    cors: "No",
-    href: "http://apiv3.iucnredlist.org/api/v3/docs"
+    "api": "MyAnimeList",
+    "desc": "Anime and Manga Database and Community",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://myanimelist.net/clubs.php?cid=13727"
   },
   {
-    api: "MeowFacts",
-    desc: "Get random cat facts",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://github.com/wh-iterabb-it/meowfacts"
+    "api": "NekosBest",
+    "desc": "Neko Images &amp; Anime roleplaying GIFs",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://docs.nekos.best"
   },
   {
-    api: "Movebank",
-    desc: "Movement and Migration data of animals",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://github.com/movebank/movebank-api-doc"
+    "api": "Shikimori",
+    "desc": "Anime discovery, tracking, forum, rates",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://shikimori.one/api/doc"
   },
   {
-    api: "Petfinder",
-    desc: "Petfinder is dedicated to helping pets find homes, another resource to get pets adopted",
-    auth: "apiKey",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://www.petfinder.com/developers/"
+    "api": "Studio Ghibli",
+    "desc": "Resources from Studio Ghibli films",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://ghibliapi.herokuapp.com"
   },
   {
-    api: "PlaceBear",
-    desc: "Placeholder bear pictures",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://placebear.com/"
+    "api": "Trace Moe",
+    "desc": "A useful tool to get the exact scene of an anime from a screenshot",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://soruly.github.io/trace.moe-api/#/"
   },
   {
-    api: "PlaceDog",
-    desc: "Placeholder Dog pictures",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://place.dog"
+    "api": "Waifu.im",
+    "desc": "Get waifu pictures from an archive of over 4000 images and multiple tags",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://waifu.im/docs"
   },
   {
-    api: "PlaceKitten",
-    desc: "Placeholder Kitten pictures",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://placekitten.com/"
-  },
-  {
-    api: "RandomDog",
-    desc: "Random pictures of dogs",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://random.dog/woof.json"
-  },
-  {
-    api: "RandomDuck",
-    desc: "Random pictures of ducks",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://random-d.uk/api"
-  },
-  {
-    api: "RandomFox",
-    desc: "Random pictures of foxes",
-    auth: "No",
-    https: "Yes",
-    cors: "No",
-    href: "https://randomfox.ca/floof/"
-  },
-  {
-    api: "RescueGroups",
-    desc: "Adoption",
-    auth: "No",
-    https: "Yes",
-    cors: "Unknown",
-    href: "https://userguide.rescuegroups.org/display/APIDG/API+Developers+Guide+Home"
-  },
-  {
-    api: "Shibe Online",
-    desc: "Random pictures of Shiba Inu, cats or birds",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "http://shibe.online/"
-  },
-  {
-    api: "The Dog",
-    desc: "A public service all about Dogs, free to use when making your fancy new App, Website or Service",
-    auth: "apiKey",
-    https: "Yes",
-    cors: "No",
-    href: "https://thedogapi.com/"
-  },
-  {
-    api: "Xeno-canto",
-    desc: "Bird recordings",
-    auth: "No",
-    https: "Yes",
-    cors: "Unknown",
-    href: "https://xeno-canto.org/explore/api"
-  },
-  {
-    api: "Zoo Animals",
-    desc: "Facts and pictures of zoo animals",
-    auth: "No",
-    https: "Yes",
-    cors: "Yes",
-    href: "https://zoo-animal-api.herokuapp.com/"
+    "api": "Waifu.pics",
+    "desc": "Image sharing platform for anime images",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "No",
+    "href": "https://waifu.pics/docs"
   }
 ]
 

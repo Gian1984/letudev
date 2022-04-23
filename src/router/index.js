@@ -37,7 +37,8 @@ import VueUILibraries from "../categories/VueUILibraries.vue"
 import AnimationLibraries from "../categories/AnimationJSLibraries.vue"
 import PublicAPIs from "../categories/PublicAPIs.vue"
 import AnimalsApi from "../apis/AnimalsApi.vue"
-
+import AnimesApi from "../apis/AnimesApi.vue"
+import AntimalwaresApi from "../apis/AntimalwaresApi.vue"
 
 
 const router = createRouter({
@@ -718,11 +719,47 @@ const router = createRouter({
         metaTags: [
           {
             name: 'description',
-            content: 'A collective list of free APIs for use in software and web development.'
+            content: 'A collective list of free APIs about animals for use in software and web development.'
           },
           {
             property: 'og:description',
-            content: 'A collective list of free APIs for use in software and web development.'
+            content: 'A collective list of free APIs about animals for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/animessapi',
+      name:'animessapi',
+      component: AnimesApi,
+      meta: {
+        title: 'Public APIs - Animes',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about animes for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about animes for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/antimalwaresapi',
+      name:'antimalwaresapi',
+      component: AntimalwaresApi,
+      meta: {
+        title: 'Public APIs - Animes',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about anti-malwares for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about anti-malwares for use in software and web development.'
           }
         ]
       },

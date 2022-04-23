@@ -65,7 +65,7 @@
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-                  Last update - March 9, 2022
+                  Last update - {{moment().format('MMMM DD')}}, {{moment().format('YYYY')}}
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@
       </div>
     </div>
 
-    <h2 class="mt-10 text-gray-500 text-xs font-medium uppercase tracking-wide">Pinned Resources</h2>
+    <h2 class="mt-10 text-gray-500 text-xs font-medium uppercase tracking-wide">Pinned APIs</h2>
     <div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div v-for="(resource, index) in resources" :key="index" class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-teal-500">
         <div class="flex-shrink-0">
@@ -135,26 +135,27 @@
 
 <script>
 import { ChevronLeftIcon, ChevronRightIcon, CalendarIcon } from '@heroicons/vue/outline'
+import moment from 'moment'
 
 const resources = [
   {
     name: 'Animals',
     href:'/animalsapi',
-    desc:'All about animals',
+    desc:'All about animals.',
     bgColor:'bg-orange-500',
   },
-  // {
-  //   name: 'Fonts',
-  //   href:'/fonts',
-  //   desc:'Websites that offer free fonts as well as font-based tools.',
-  //   bgColor:'bg-pink-600',
-  // },
-  // {
-  //   name: 'Colors',
-  //   href:'/colors',
-  //   desc:'Websites and resources that help with choices related to colors.',
-  //   bgColor:'bg-purple-600',
-  // },
+  {
+    name: 'Animes',
+    href:'/animessapi',
+    desc:'All about animes.',
+    bgColor:'bg-pink-600',
+  },
+  {
+    name: 'Anti-malware',
+    href:'/antimalwaresapi',
+    desc:'All about anti-malware.',
+    bgColor:'bg-purple-600',
+  },
   // {
   //   name: 'Icons',
   //   href:'/icons',
@@ -358,6 +359,7 @@ export default {
   setup() {
     return {
       resources,
+      moment
     }
   },
 }

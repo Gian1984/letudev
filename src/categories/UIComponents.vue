@@ -41,7 +41,7 @@
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-                  Last update - March 9, 2022
+                  Last update - {{moment().format('MMMM DD')}}, {{moment().format('YYYY')}}
                 </div>
               </div>
             </div>
@@ -112,6 +112,7 @@
 <script>
 import { ChevronDoubleRightIcon, CalendarIcon } from '@heroicons/vue/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid'
+import moment from "moment";
 
 const projects = [
   { name: 'Bit', href:"https://bit.dev/components", desc:'Provides a huge library of reuseable UI Components for React, Angular, Vue, React Native. Also can be used for sharing UI Components among other team members', bgColor: 'bg-pink-600' },
@@ -192,6 +193,7 @@ export default {
   setup() {
     return {
       projects,
+      moment
     }
   },
 }
