@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/calendarapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Calendars</router-link>
+                    <router-link to="/exchangeapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Currency Exchange</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Calendars </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Currency Exchange </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Calendars</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Currency Exchange</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Calendars</span>
+              <span class="lg:pl-2">Currency Exchange</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -143,129 +143,145 @@ import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/solid'
 import { CalendarIcon, ArrowCircleRightIcon } from '@heroicons/vue/outline'
 import moment from "moment";
 
+
 const apis = [
   {
-    "api": "Abstract Public Holidays",
-    "desc": "Data on national, regional, and religious holidays via API",
+    "api": "1Forge",
+    "desc": "Forex currency market data",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://1forge.com/forex-data-api/api-documentation"
+  },
+  {
+    "api": "Amdoren",
+    "desc": "Free currency API with over 150 currencies",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.amdoren.com/currency-api/"
+  },
+  {
+    "api": "apilayer fixer.io",
+    "desc": "Exchange rates and currency conversion",
+    "auth": "apiKey",
+    "https": "No",
+    "cors": "Unknown",
+    "href": "https://fixer.io"
+  },
+  {
+    "api": "Bank of Russia",
+    "desc": "Exchange rates and currency conversion",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://www.cbr.ru/development/SXML/"
+  },
+  {
+    "api": "Currency-api",
+    "desc": "Free Currency Exchange Rates API with 150+ Currencies &amp; No Rate Limits",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://github.com/fawazahmed0/currency-api#readme"
+  },
+  {
+    "api": "CurrencyFreaks",
+    "desc": "Provides current and historical currency exchange rates with free plan 1K requests/month",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://www.abstractapi.com/holidays-api"
+    "href": "https://currencyfreaks.com/"
   },
   {
-    "api": "Calendarific",
-    "desc": "Worldwide Holidays",
+    "api": "Currencylayer",
+    "desc": "Exchange rates and currency conversion",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://calendarific.com/"
+    "href": "https://currencylayer.com/documentation"
   },
   {
-    "api": "Church Calendar",
-    "desc": "Catholic liturgical calendar",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "http://calapi.inadiutorium.cz/"
-  },
-  {
-    "api": "Czech Namedays Calendar",
-    "desc": "Lookup for a name and returns nameday date",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "https://svatky.adresa.info"
-  },
-  {
-    "api": "Festivo Public Holidays",
-    "desc": "Fastest and most advanced public holiday and observance service on the market",
+    "api": "CurrencyScoop",
+    "desc": "Real-time and historical currency rates JSON API",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://docs.getfestivo.com/docs/products/public-holidays-api/intro"
+    "href": "https://currencyscoop.com/api-documentation"
   },
   {
-    "api": "Google Calendar",
-    "desc": "Display, create and modify Google calendar events",
-    "auth": "OAuth",
+    "api": "Czech National Bank",
+    "desc": "A collection of exchange rates",
+    "auth": "No",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://developers.google.com/google-apps/calendar/"
+    "href": "https://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.xml"
   },
   {
-    "api": "Hebrew Calendar",
-    "desc": "Convert between Gregorian and Hebrew, fetch Shabbat and Holiday times, etc",
+    "api": "Economia.Awesome",
+    "desc": "Portuguese free currency prices and conversion with no rate limits",
     "auth": "No",
-    "https": "No",
+    "https": "Yes",
     "cors": "Unknown",
-    "href": "https://www.hebcal.com/home/developer-apis"
+    "href": "https://docs.awesomeapi.com.br/api-de-moedas"
   },
   {
-    "api": "Holidays",
-    "desc": "Historical data regarding holidays",
+    "api": "ExchangeRate-API",
+    "desc": "Free currency conversion",
     "auth": "apiKey",
     "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://holidayapi.com/"
+    "cors": "Yes",
+    "href": "https://www.exchangerate-api.com"
   },
   {
-    "api": "LectServe",
-    "desc": "Protestant liturgical calendar",
+    "api": "Exchangerate.host",
+    "desc": "Free foreign exchange &amp; crypto rates API",
     "auth": "No",
-    "https": "No",
+    "https": "Yes",
     "cors": "Unknown",
-    "href": "http://www.lectserve.com"
+    "href": "https://exchangerate.host"
   },
   {
-    "api": "Nager.Date",
-    "desc": "Public holidays for more than 90 countries",
+    "api": "Exchangeratesapi.io",
+    "desc": "Exchange rates with currency conversion",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://exchangeratesapi.io"
+  },
+  {
+    "api": "Frankfurter",
+    "desc": "Exchange rates, currency conversion and time series",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://www.frankfurter.app/docs"
+  },
+  {
+    "api": "FreeForexAPI",
+    "desc": "Real-time foreign exchange rates for major currency pairs",
     "auth": "No",
     "https": "Yes",
     "cors": "No",
-    "href": "https://date.nager.at"
+    "href": "https://freeforexapi.com/Home/Api"
   },
   {
-    "api": "Namedays Calendar",
-    "desc": "Provides namedays for multiple countries",
+    "api": "National Bank of Poland",
+    "desc": "A collection of currency exchange rates (data in XML and JSON)",
     "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://nameday.abalin.net"
+    "href": "http://api.nbp.pl/en.html"
   },
   {
-    "api": "Non-Working Days",
-    "desc": "Database of ICS files for non working days",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://github.com/gadael/icsdb"
-  },
-  {
-    "api": "Non-Working Days",
-    "desc": "Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other",
+    "api": "VATComply.com",
+    "desc": "Exchange rates, geolocation and VAT number validation",
     "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://isdayoff.ru"
-  },
-  {
-    "api": "Russian Calendar",
-    "desc": "Check if a date is a Russian holiday or not",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://github.com/egno/work-calendar"
-  },
-  {
-    "api": "UK Bank Holidays",
-    "desc": "Bank holidays in England and Wales, Scotland and Northern Ireland",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://www.gov.uk/bank-holidays.json"
+    "href": "https://www.vatcomply.com/documentation"
   }
 ]
-
 export default {
   components: {
     ChevronRightIcon,

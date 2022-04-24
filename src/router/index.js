@@ -45,6 +45,12 @@ import BlockchainApi from "../apis/BlockchainApi.vue"
 import BookApi from "../apis/BookApi.vue"
 import BusinessApi from "../apis/BusinessApi.vue"
 import CalendarApi from "../apis/CalendarApi.vue";
+import CloudApi from "../apis/CloudApi.vue"
+import IntegrationApi from "../apis/IntegrationApi.vue"
+import CryptocurrencyApi from "../apis/CryptocurrencyApi.vue"
+import ExchangeApi from "../apis/ExchangeApi.vue"
+import ValidationApi from "../apis/ValidationApi.vue"
+import DevelopmentApi from "../apis/DevelopmentApi.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -873,6 +879,114 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about calendars for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/cloudapi',
+      name:'cloudapi',
+      component: CloudApi,
+      meta: {
+        title: 'Public APIs - Cloud storage & file sharing',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about cloud storage & file sharing for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about cloud storage & file sharing for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/integrationapi',
+      name:'integrationapi',
+      component: IntegrationApi,
+      meta: {
+        title: 'Public APIs - Continuous Integration',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about continuous integration for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about continuous integration for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/cryptocurrencyapi',
+      name:'cryptocurrencyapi',
+      component: CryptocurrencyApi,
+      meta: {
+        title: 'Public APIs - Continuous Integration',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about cryptocurrency for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about cryptocurrency for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/exchangeapi',
+      name:'exchangeapi',
+      component: ExchangeApi,
+      meta: {
+        title: 'Public APIs - Currency Exchange',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about currency exchange for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about currency exchange for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/validationapi',
+      name:'validationapi',
+      component: ValidationApi,
+      meta: {
+        title: 'Public APIs - Data Validation',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about data validation for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about data validation for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/developmentapi',
+      name:'developmentapi',
+      component: DevelopmentApi,
+      meta: {
+        title: 'Public APIs - Development',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about development for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about development for use in software and web development.'
           }
         ]
       },

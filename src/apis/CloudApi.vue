@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/calendarapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Calendars</router-link>
+                    <router-link to="/cloudapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Cloud Storage & File Sharing</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Calendars </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Cloud Storage & File Sharing </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Calendars</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Cloud Storage & File Sharing</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Calendars</span>
+              <span class="lg:pl-2">Cloud Storage & File Sharing</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -145,126 +145,151 @@ import moment from "moment";
 
 const apis = [
   {
-    "api": "Abstract Public Holidays",
-    "desc": "Data on national, regional, and religious holidays via API",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://www.abstractapi.com/holidays-api"
-  },
-  {
-    "api": "Calendarific",
-    "desc": "Worldwide Holidays",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://calendarific.com/"
-  },
-  {
-    "api": "Church Calendar",
-    "desc": "Catholic liturgical calendar",
+    "api": "AnonFiles",
+    "desc": "Upload and share your files anonymously",
     "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "http://calapi.inadiutorium.cz/"
-  },
-  {
-    "api": "Czech Namedays Calendar",
-    "desc": "Lookup for a name and returns nameday date",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "https://svatky.adresa.info"
-  },
-  {
-    "api": "Festivo Public Holidays",
-    "desc": "Fastest and most advanced public holiday and observance service on the market",
-    "auth": "apiKey",
     "https": "Yes",
-    "cors": "Yes",
-    "href": "https://docs.getfestivo.com/docs/products/public-holidays-api/intro"
+    "cors": "Unknown",
+    "href": "https://anonfiles.com/docs/api"
   },
   {
-    "api": "Google Calendar",
-    "desc": "Display, create and modify Google calendar events",
+    "api": "BayFiles",
+    "desc": "Upload and share your files",
+    "auth": "No",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://bayfiles.com/docs/api"
+  },
+  {
+    "api": "Box",
+    "desc": "File Sharing and Storage",
     "auth": "OAuth",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://developers.google.com/google-apps/calendar/"
+    "href": "https://developer.box.com/"
   },
   {
-    "api": "Hebrew Calendar",
-    "desc": "Convert between Gregorian and Hebrew, fetch Shabbat and Holiday times, etc",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "https://www.hebcal.com/home/developer-apis"
-  },
-  {
-    "api": "Holidays",
-    "desc": "Historical data regarding holidays",
+    "api": "ddownload",
+    "desc": "File Sharing and Storage",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://holidayapi.com/"
+    "href": "https://ddownload.com/api"
   },
   {
-    "api": "LectServe",
-    "desc": "Protestant liturgical calendar",
-    "auth": "No",
-    "https": "No",
+    "api": "Dropbox",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
     "cors": "Unknown",
-    "href": "http://www.lectserve.com"
+    "href": "https://www.dropbox.com/developers"
   },
   {
-    "api": "Nager.Date",
-    "desc": "Public holidays for more than 90 countries",
+    "api": "File.io",
+    "desc": "Super simple file sharing, convenient, anonymous and secure",
     "auth": "No",
     "https": "Yes",
-    "cors": "No",
-    "href": "https://date.nager.at"
+    "cors": "Unknown",
+    "href": "https://www.file.io"
   },
   {
-    "api": "Namedays Calendar",
-    "desc": "Provides namedays for multiple countries",
+    "api": "GoFile",
+    "desc": "Unlimited size file uploads for free",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gofile.io/api"
+  },
+  {
+    "api": "Google Drive",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developers.google.com/drive/"
+  },
+  {
+    "api": "Gyazo",
+    "desc": "Save &amp; Share screen captures instantly",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://gyazo.com/api/docs"
+  },
+  {
+    "api": "Imgbb",
+    "desc": "Simple and quick private image sharing",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://api.imgbb.com/"
+  },
+  {
+    "api": "OneDrive",
+    "desc": "File Sharing and Storage",
+    "auth": "OAuth",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://developer.microsoft.com/onedrive"
+  },
+  {
+    "api": "Pantry",
+    "desc": "Free JSON storage for small projects",
     "auth": "No",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://nameday.abalin.net"
+    "href": "https://getpantry.cloud/"
   },
   {
-    "api": "Non-Working Days",
-    "desc": "Database of ICS files for non working days",
-    "auth": "No",
+    "api": "Pastebin",
+    "desc": "Plain Text Storage",
+    "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://github.com/gadael/icsdb"
+    "href": "https://pastebin.com/doc_api"
   },
   {
-    "api": "Non-Working Days",
-    "desc": "Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other",
-    "auth": "No",
+    "api": "Pinata",
+    "desc": "IPFS Pinning Services API",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Unknown",
+    "href": "https://docs.pinata.cloud/"
+  },
+  {
+    "api": "Quip",
+    "desc": "File Sharing and Storage for groups",
+    "auth": "apiKey",
     "https": "Yes",
     "cors": "Yes",
-    "href": "https://isdayoff.ru"
+    "href": "https://quip.com/dev/automation/documentation"
   },
   {
-    "api": "Russian Calendar",
-    "desc": "Check if a date is a Russian holiday or not",
-    "auth": "No",
+    "api": "Storj",
+    "desc": "Decentralized Open-Source Cloud Storage",
+    "auth": "apiKey",
     "https": "Yes",
-    "cors": "No",
-    "href": "https://github.com/egno/work-calendar"
+    "cors": "Unknown",
+    "href": "https://docs.storj.io/dcs/"
   },
   {
-    "api": "UK Bank Holidays",
-    "desc": "Bank holidays in England and Wales, Scotland and Northern Ireland",
+    "api": "The Null Pointer",
+    "desc": "No-bullshit file hosting and URL shortening service",
     "auth": "No",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://www.gov.uk/bank-holidays.json"
+    "href": "https://0x0.st"
+  },
+  {
+    "api": "Web3 Storage",
+    "desc": "File Sharing and Storage for Free with 1TB Space",
+    "auth": "apiKey",
+    "https": "Yes",
+    "cors": "Yes",
+    "href": "https://web3.storage/"
   }
 ]
+
 
 export default {
   components: {

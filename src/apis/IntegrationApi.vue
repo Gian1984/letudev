@@ -36,7 +36,7 @@
                 <li>
                   <div class="flex items-center">
                     <ChevronRightIcon class="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <router-link to="/calendarapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Calendars</router-link>
+                    <router-link to="/integrationapi" aria-current="page" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Continuous Integration</router-link>
                   </div>
                 </li>
               </ol>
@@ -44,7 +44,7 @@
           </div>
           <div class="mt-2 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
-              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Calendars </span></h2>
+              <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Public APIs <span class="text-gray-500">/ Continuous Integration </span></h2>
               <div class="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
                 <div class="mt-2 flex text-sm text-gray-500">
                   <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
     <!-- Projects list (only on smallest breakpoint) -->
     <div class="mt-10 sm:hidden">
       <div class="px-4 sm:px-6">
-        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Calendars</h2>
+        <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Continuous Integration</h2>
       </div>
       <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
         <li v-for="item in apis" :key="item.api">
@@ -92,7 +92,7 @@
           <thead>
           <tr class="border-t border-gray-200">
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              <span class="lg:pl-2">Calendars</span>
+              <span class="lg:pl-2">Continuous Integration</span>
             </th>
             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auth</th>
             <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider ">CORS</th>
@@ -145,124 +145,52 @@ import moment from "moment";
 
 const apis = [
   {
-    "api": "Abstract Public Holidays",
-    "desc": "Data on national, regional, and religious holidays via API",
+    "api": "Azure DevOps Health",
+    "desc": "Resource health helps you diagnose and get support when an Azure issue impacts your resources",
     "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://www.abstractapi.com/holidays-api"
-  },
-  {
-    "api": "Calendarific",
-    "desc": "Worldwide Holidays",
-    "auth": "apiKey",
-    "https": "Yes",
-    "cors": "Unknown",
-    "href": "https://calendarific.com/"
-  },
-  {
-    "api": "Church Calendar",
-    "desc": "Catholic liturgical calendar",
-    "auth": "No",
     "https": "No",
-    "cors": "Unknown",
-    "href": "http://calapi.inadiutorium.cz/"
+    "cors": "No",
+    "href": "https://docs.microsoft.com/en-us/rest/api/resourcehealth"
   },
   {
-    "api": "Czech Namedays Calendar",
-    "desc": "Lookup for a name and returns nameday date",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "https://svatky.adresa.info"
-  },
-  {
-    "api": "Festivo Public Holidays",
-    "desc": "Fastest and most advanced public holiday and observance service on the market",
+    "api": "Bitrise",
+    "desc": "Build tool and processes integrations to create efficient development pipelines",
     "auth": "apiKey",
     "https": "Yes",
-    "cors": "Yes",
-    "href": "https://docs.getfestivo.com/docs/products/public-holidays-api/intro"
+    "cors": "Unknown",
+    "href": "https://api-docs.bitrise.io/"
   },
   {
-    "api": "Google Calendar",
-    "desc": "Display, create and modify Google calendar events",
+    "api": "Buddy",
+    "desc": "The fastest continuous integration and continuous delivery platform",
     "auth": "OAuth",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://developers.google.com/google-apps/calendar/"
+    "href": "https://buddy.works/docs/api/getting-started/overview"
   },
   {
-    "api": "Hebrew Calendar",
-    "desc": "Convert between Gregorian and Hebrew, fetch Shabbat and Holiday times, etc",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "https://www.hebcal.com/home/developer-apis"
-  },
-  {
-    "api": "Holidays",
-    "desc": "Historical data regarding holidays",
+    "api": "CircleCI",
+    "desc": "Automate the software development process using continuous integration and continuous delivery",
     "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://holidayapi.com/"
+    "href": "https://circleci.com/docs/api/v1-reference/"
   },
   {
-    "api": "LectServe",
-    "desc": "Protestant liturgical calendar",
-    "auth": "No",
-    "https": "No",
-    "cors": "Unknown",
-    "href": "http://www.lectserve.com"
-  },
-  {
-    "api": "Nager.Date",
-    "desc": "Public holidays for more than 90 countries",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://date.nager.at"
-  },
-  {
-    "api": "Namedays Calendar",
-    "desc": "Provides namedays for multiple countries",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://nameday.abalin.net"
-  },
-  {
-    "api": "Non-Working Days",
-    "desc": "Database of ICS files for non working days",
-    "auth": "No",
+    "api": "Codeship",
+    "desc": "Codeship is a Continuous Integration Platform in the cloud",
+    "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://github.com/gadael/icsdb"
+    "href": "https://docs.cloudbees.com/docs/cloudbees-codeship/latest/api-overview/"
   },
   {
-    "api": "Non-Working Days",
-    "desc": "Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "Yes",
-    "href": "https://isdayoff.ru"
-  },
-  {
-    "api": "Russian Calendar",
-    "desc": "Check if a date is a Russian holiday or not",
-    "auth": "No",
-    "https": "Yes",
-    "cors": "No",
-    "href": "https://github.com/egno/work-calendar"
-  },
-  {
-    "api": "UK Bank Holidays",
-    "desc": "Bank holidays in England and Wales, Scotland and Northern Ireland",
-    "auth": "No",
+    "api": "Travis CI",
+    "desc": "Sync your GitHub projects with Travis CI to test your code in minutes",
+    "auth": "apiKey",
     "https": "Yes",
     "cors": "Unknown",
-    "href": "https://www.gov.uk/bank-holidays.json"
+    "href": "https://docs.travis-ci.com/api/"
   }
 ]
 
