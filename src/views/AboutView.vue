@@ -1,12 +1,34 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
 
+  <header>
+    <div>
+      <div class="relative">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"/>
+        <div class="mx-auto">
+          <div class="relative sm:overflow-hidden" style="min-height: 40vh">
+            <div class="absolute inset-0">
+              <img class="h-full w-full object-cover" src="../assets/img/mesh.webp" alt="letudev_header"/>
+              <div class="absolute inset-0" />
+            </div>
+            <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+              <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                <span class="block text-white uppercase font-Pacifico">Let  U  dev</span>
+                <span class="block text-teal-500 text-2xl">List of useful resources made for all web developers </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <div class="bg-white">
     <div class="max-w-7xl mx-auto pt-10 px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p class="mt-1 text-2xl font-extrabold text-gray-900 sm:tracking-tight sm:text-4xl">All about U & I !</p>
         <p class="max-w-xl mx-auto text-sm sm:text-base text-gray-500">Everything you need to know about me, this project, and what I want to build with you!</p>
+
       </div>
     </div>
   </div>
@@ -63,6 +85,22 @@
           <div class="border-t border-gray-200 mt-10 pt-10">
             <h3 class="text-sm font-medium text-gray-900">Follow me</h3>
             <ul role="list" class="flex items-center space-x-6 mt-4">
+              <li>
+                <a href="https://www.facebook.com/letudev" target="_blank" class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Follow on Facebook</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 22 22">
+                    <path fill-rule="evenodd" d='M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z' clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/let_you_dev/" target="_blank" class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Follow on Instagram</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 22 22">
+                    <path fill-rule="evenodd" d='M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z' clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </li>
               <li>
                 <a href="https://www.linkedin.com/in/gianluca-tiengo/" target="_blank" class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500">
                   <span class="sr-only">Follow on Linkedin</span>
@@ -167,6 +205,7 @@
           <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic" />
         </div>
       </div>
+
     </div>
   </div>
 
@@ -270,7 +309,7 @@ const nexts = {
         <p>I try my best to add as quickly as possible all the resources available to me at this time.</p>
       `,
       date: 'April 17, 2022',
-      author: '1 - Complete all resources',
+      author: '1 - Adding new categories to resources section',
     },
     {
       id: 2,
@@ -278,7 +317,7 @@ const nexts = {
         <p>The section on links to API services is very long and transcribing it on this site takes a lot of time. I hope to be able to expedite it.</p>
       `,
       date: 'April 17, 2022',
-      author: '2 - Add APIs section',
+      author: '2 - Adding new categories to APIs section',
     },
     {
       id: 3,
@@ -308,10 +347,11 @@ const About = {
 
     <p class="text-gray-500 text-sm">
         During my life, for pleasure or for necessity, I have always had to learn and adapt,
-        change jobs and habits. After high school, I became a hairdresser, but following an occupational disease,
+        change jobs and habits.<br><br>
+        After high school, I became a hairdresser, but following an occupational disease,
         I had to reinvent myself. So I trained as an accounting assistant and started working in a watchmaking laboratory.
-        Then I decided to take training in this sector, and enrolled in the watchmaking school to deepen my knowledge.
-        I always been a tech passionate, This is why I joined a coding bootcamp training to combine passion and employment.
+        Then I decided to take training in this sector, and enrolled in the watchmaking school to deepen my knowledge.<br><br>
+        I always been a tech passionate, this is why I joined a coding bootcamp training to combine passion and employment.
         I would like to take this wonderful opportunity to learn more, go further and be able to reinvent myself, once again.
     </p>
   `,

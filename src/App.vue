@@ -116,13 +116,127 @@
   </div>
 
 
+
+
   <footer class="bg-gray-300" aria-labelledby="footer-heading">
+
+
+
+    <div class="bg-white">
+      <div class="mx-auto">
+        <div class="bg-gray-50 rounded-2xl px-6 py-16 sm:p-16">
+          <div class="max-w-xl mx-auto lg:max-w-none">
+            <div class="text-center">
+              <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900">Today, your donation is a gift that could not be appreciated more.</h2>
+            </div>
+            <div class="mt-12 max-w-sm mx-auto grid grid-cols-1 gap-y-10 gap-x-8 sm:max-w-none lg:grid-cols-3">
+              <div v-for="item in donations" :key="item .name" class="text-center sm:flex sm:text-left lg:block lg:text-center">
+                <div class="sm:flex-shrink-0">
+                  <div class="flow-root">
+                    <img class="h-8 mx-auto" :src="item.imageSrc" :alt="item.alt" />
+                  </div>
+                </div>
+                <div class="mt-3 w-20 flex mx-auto">
+                  <a :href="item.href" target="_blank" class="max-w-12 bg-teal-500 hover:bg-teal-700 text-white text-xs py-1 px-2 rounded-full flex">
+                    <span class="ml-2">Donate</span>
+                    <ChevronRightIcon class=" h-4 w-4" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+              <div class="text-center sm:flex sm:text-left lg:block lg:text-center">
+                <div class="sm:flex-shrink-0">
+                  <div class="flow-root">
+                    <img class="h-8 mx-auto" src="./assets/img/ethereum.png" alt="ethereum" />
+                  </div>
+                </div>
+                <div class="mt-3 w-20 flex mx-auto">
+                  <button @click="toggleModal()"  class="max-w-12 bg-teal-500 hover:bg-teal-700 text-white text-xs py-1 px-2 rounded-full flex">
+                    <span class="ml-2">Donate</span>
+                    <ChevronRightIcon class=" h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--    ethereum modal-->
+
+
+    <div v-if="showModal" class="bg-white bg-opacity-75 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+      <div class="relative w-auto my-6 mx-auto lg:max-w-6xl py-60">
+        <!--content-->
+        <div class="border-0 shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none bg-gray-200">
+          <!--header-->
+          <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"></div>
+          <!--body-->
+          <div class="relative p-6 flex-auto">
+
+
+            <!--mobile-->
+            <div  class="flex flex-col rounded-lg shadow-lg overflow-hidden block lg:hidden ">
+              <div class="flex-shrink-0">
+                <img class="h-full w-full object-cover" src="./assets/img/eth.webp" alt="eth-qrcode" />
+              </div>
+              <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                <div class="flex-1">
+                  <p  class="block">
+                    <span class="text-xl font-semibold text-gray-900">
+                      Thank you!
+                    </span>
+                    <span class="mt-3 text-sm text-gray-500">
+                      I’ve got a lot of work ahead of me, and your donation has made it that much easier to get things done and thrust me forward. I thank you for your support and for your desire to help me succeed in this venture.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!--desktop-->
+            <div class="relative py-16 bg-white hidden sm:block">
+              <div class="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block" aria-hidden="true" />
+              <div class="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
+                <div class="lg:grid lg:grid-cols-12">
+                  <div class="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
+                    <div class="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden" aria-hidden="true" />
+                    <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
+                      <div class="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
+                        <img class="object-cover object-center rounded-3xl shadow-2xl" src="./assets/img/eth.webp" alt="eth_qrcode" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="relative bg-indigo-600 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+                    <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
+                      <h2 class="text-3xl font-extrabold text-white" id="join-heading">Thank you!</h2>
+                      <p class="text-lg text-white">I’ve got a lot of work ahead of me, and your donation has made it that much easier to get things done and thrust me forward. I thank you for your support and for your desire to help me succeed in this venture.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+            <button class=" bg-transparent uppercase text-sm rounded  mr-1 mb-1 " type="button" v-on:click="toggleModal()">
+              <XIcon class="w-8 h-8 text-gray-500 hover:text-black" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end ethereum modal-->
+
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
 
       <!-- Begin Mailchimp Signup Form -->
-
-
 
       <div class="lg:flex lg:items-center lg:justify-between xl:mt-0">
         <div>
@@ -177,10 +291,25 @@
 
 <script>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import {  MenuIcon, XIcon } from '@heroicons/vue/outline'
+import {  MenuIcon, XIcon, ChevronRightIcon  } from '@heroicons/vue/outline'
 import { defineComponent, h } from 'vue'
 import { ChevronDownIcon, SearchIcon } from '@heroicons/vue/solid'
 import SearchNav from "./components/SearchNav.vue";
+
+
+const donations = [
+  {
+    imageSrc: './img/bmc.webp',
+    href:'https://www.buymeacoffee.com/letudev',
+    alt:'buymeacoffee'
+  },
+  {
+    imageSrc: './img/paypal.png',
+    href:'https://paypal.me/letudev?country.x=IT&locale.x=it_IT',
+    alt:'paypal.me'
+  },
+]
+
 
 const navigation = {
   solutions: [
@@ -199,7 +328,7 @@ const navigation = {
   social: [
     {
       name: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/letudev',
       icon: defineComponent({
         render: () =>
             h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -213,7 +342,7 @@ const navigation = {
     },
     {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/let_you_dev/',
       icon: defineComponent({
         render: () =>
             h('svg', { fill: 'currentColor', viewBox: '0 0 24 24' }, [
@@ -269,9 +398,18 @@ const navigation = {
 }
 
 export default {
+  name: "large-modal",
+
+  methods:{
+    toggleModal: function(){
+      this.showModal = !this.showModal;
+    }
+  },
+
   data() {
     return{
-      searchNav: false
+      searchNav: false,
+      showModal: false
     }
   },
 
@@ -287,12 +425,14 @@ export default {
     SearchIcon,
     MenuIcon,
     XIcon,
-    SearchNav
+    SearchNav,
+    ChevronRightIcon
   },
 
   setup() {
     return {
       navigation,
+      donations,
     }
   },
 }

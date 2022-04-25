@@ -173,6 +173,62 @@ const projects = [
     name: 'Resources / Others',
     href:'/others',
   },
+  {
+    name: 'APIs / Animes',
+    href:'/animessapi',
+  },
+  {
+    name: 'APIs / Anti-malware',
+    href:'/antimalwaresapi',
+  },
+  {
+    name: 'APIs / Art & design',
+    href:'/artdesignapi',
+  },
+  {
+    name: 'APIs / Authentication & authorization',
+    href:'/authapis',
+  },
+  {
+    name: 'APIs / Blockchain',
+    href:'/blockchainapi',
+  },
+  {
+    name: 'APIs / Books',
+    href:'/bookapi',
+  },
+  {
+    name: 'APIs / Business',
+    href:'/businessapi',
+  },
+  {
+    name: 'APIs / Calendars',
+    href:'/calendarapi',
+  },
+  {
+    name: 'APIs / Cloud Storage & File Sharing',
+    href:'/cloudapi',
+  },
+  {
+    name: 'APIs / Continuous Integration',
+    href:'/integrationapi',
+  },
+  {
+    name: 'APIs / Cryptocurrency',
+    href:'/cryptocurrencyapi',
+  },
+  {
+    name: 'APIs / Currency Exchange',
+    href:'/exchangeapi',
+  },
+  {
+    name: 'APIs / Data Validation',
+    href:'/validationapi',
+  },
+  {
+    name: 'APIs / Development',
+    href:'/developmentapi',
+  },
 ]
 const recent = [projects[0],projects[1],projects[4],projects[6],projects[10]]
 
