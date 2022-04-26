@@ -229,6 +229,51 @@ const projects = [
     name: 'APIs / Development',
     href:'/developmentapi',
   },
+  {
+    name: 'APIs / Dictionaries',
+    href:'/dictionariesapi',
+  },
+  {
+    name: 'APIs / Documents & Productivity',
+    href:'/productivityapi',
+  },
+  {
+    name: 'APIs / Email',
+    href:'/emailapi',
+
+  },
+  {
+    name: 'APIs / Entertainment',
+    href:'/entertainmentapi',
+  },
+  {
+    name: 'APIs / Environment',
+    href:'/environmentapi',
+  },
+  {
+    name: 'APIs / Events',
+    href:'/eventsapi',
+  },
+  {
+    name: 'APIs / Finance',
+    href:'/financeapi',
+  },
+  {
+    name: 'APIs / Food & Drink',
+    href:'/fooddrinkapi',
+  },
+  {
+    name: 'APIs / Games & Comics',
+    href:'/gamescomicsapi',
+  },
+  {
+    name: 'APIs / Geocoding',
+    href:'/geocodingapi',
+  },
+  {
+    name: 'APIs / Government',
+    href:'/governmentapi',
+  },
 ]
 const recent = [projects[0],projects[1],projects[4],projects[6],projects[10]]
 

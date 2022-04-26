@@ -51,6 +51,17 @@ import CryptocurrencyApi from "../apis/CryptocurrencyApi.vue"
 import ExchangeApi from "../apis/ExchangeApi.vue"
 import ValidationApi from "../apis/ValidationApi.vue"
 import DevelopmentApi from "../apis/DevelopmentApi.vue"
+import DictionariesApi from "../apis/DictionariesApi.vue"
+import ProductivityApi from "../apis/ProductivityApi.vue"
+import EmailApi from "../apis/EmailApi.vue"
+import EntertainmentApi from "../apis/EntertainmentApi.vue"
+import EnvironmentApi from "../apis/EnvironmentApi.vue"
+import EventsApi from "../apis/EventsApi.vue"
+import FinanceApi from "../apis/FinanceApi.vue"
+import FoodDrinkApi from "../apis/FoodDrinkApi.vue"
+import GamesComicsApi from "../apis/GamesComicsApi.vue"
+import GeocodingApi from "../apis/GeocodingApi.vue"
+import GovernmentApi from "../apis/GovernmentApi.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -987,6 +998,204 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about development for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/dictionariesapi',
+      name:'dictionariesapi',
+      component: DictionariesApi,
+      meta: {
+        title: 'Public APIs - Dictionaries',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about dictionaries for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about dictionaries for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/productivityapi',
+      name:'productivityapi',
+      component: ProductivityApi,
+      meta: {
+        title: 'Public APIs - Productivity',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about productivity for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about productivity for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/emailapi',
+      name:'emailapi',
+      component: EmailApi,
+      meta: {
+        title: 'Public APIs - Email',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about email for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about email for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/entertainmentapi',
+      name:'entertainmentapi',
+      component: EntertainmentApi,
+      meta: {
+        title: 'Public APIs - Entertainment',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about entertainment for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about entertainment for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/environmentapi',
+      name:'environmentapi',
+      component: EnvironmentApi,
+      meta: {
+        title: 'Public APIs - Environment',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about environment for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about environment for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/eventsapi',
+      name:'eventsapi',
+      component: EventsApi,
+      meta: {
+        title: 'Public APIs - Events',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about events for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about events for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/financeapi',
+      name:'financeapi',
+      component: FinanceApi,
+      meta: {
+        title: 'Public APIs - Finance',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about finance for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about finance for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/fooddrinkapi',
+      name:'fooddrinkapi',
+      component: FoodDrinkApi,
+      meta: {
+        title: 'Public APIs - Food & Drink',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about food & drink for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about food & drink for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/gamescomicsapi',
+      name:'gamescomicsapi',
+      component: GamesComicsApi,
+      meta: {
+        title: 'Public APIs - Games & Comics',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about games & comics for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about games & comics for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/geocodingapi',
+      name:'geocodingapi',
+      component: GeocodingApi,
+      meta: {
+        title: 'Public APIs - Geocoding',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about geocoding for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about geocoding for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/governmentapi',
+      name:'governmentapi',
+      component: GovernmentApi,
+      meta: {
+        title: 'Public APIs - Government',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about government for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about government for use in software and web development.'
           }
         ]
       },
