@@ -62,6 +62,13 @@ import FoodDrinkApi from "../apis/FoodDrinkApi.vue"
 import GamesComicsApi from "../apis/GamesComicsApi.vue"
 import GeocodingApi from "../apis/GeocodingApi.vue"
 import GovernmentApi from "../apis/GovernmentApi.vue"
+import HealthApi from "../apis/HealthApi.vue"
+import JobsApi from "../apis/JobsApi.vue"
+import MachineLearningApi from "../apis/MachineLearningApi.vue"
+import MusicApi from "../apis/MusicApi.vue"
+import NewsApi from "../apis/NewsApi.vue"
+import OpenDataApi from "../apis/OpenDataApi.vue"
+import OpenSourceApi from "../apis/OpenDataApi.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -1196,6 +1203,132 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about government for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/healthapi',
+      name:'healthapi',
+      component: HealthApi,
+      meta: {
+        title: 'Public APIs - Health',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about healt for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about healt for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/jobsapi',
+      name:'jobsapi',
+      component: JobsApi,
+      meta: {
+        title: 'Public APIs - Jobs',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about jobs for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about jobs for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/machinelearningapi',
+      name:'machinelearningapi',
+      component: MachineLearningApi,
+      meta: {
+        title: 'Public APIs - Machine Learning',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about machine learning for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about machine learning for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/musicapi',
+      name:'musicapi',
+      component: MusicApi,
+      meta: {
+        title: 'Public APIs - Music',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about music for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about music for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/newsapi',
+      name:'newsapi',
+      component: NewsApi,
+      meta: {
+        title: 'Public APIs - News',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about news for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about news for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/opendataapi',
+      name:'opendataapi',
+      component: OpenDataApi,
+      meta: {
+        title: 'Public APIs - Open Data',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about open data for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about open data for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/opensourceapi',
+      name:'opensourceapi',
+      component: OpenSourceApi,
+      meta: {
+        title: 'Public APIs - Open Source Projects',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about open source projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about open source projects for use in software and web development.'
           }
         ]
       },

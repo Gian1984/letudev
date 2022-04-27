@@ -274,6 +274,34 @@ const projects = [
     name: 'APIs / Government',
     href:'/governmentapi',
   },
+  {
+    name: 'APIs / Health',
+    href:'/healthapi',
+  },
+  {
+    name: 'APIs / Jobs',
+    href:'/jobsapi',
+  },
+  {
+    name: 'APIs / Machine Learning',
+    href:'/machinelearningapi',
+  },
+  {
+    name: 'APIs / Music',
+    href:'/musicapi',
+  },
+  {
+    name: 'APIs / News',
+    href:'/newsapi',
+  },
+  {
+    name: 'APIs / Open Data',
+    href:'/opendataapi',
+  },
+  {
+    name: 'APIs / Open Source Projects',
+    href:'/opensourceapi',
+  },
 ]
 const recent = [projects[0],projects[1],projects[4],projects[6],projects[10]]
 

@@ -261,7 +261,7 @@ const resources = [
   {
     name: 'Events',
     href:'/eventsapi',
-    desc:'All about event',
+    desc:'All about event.',
     bgColor:'bg-cyan-500',
   },
   {
@@ -294,41 +294,48 @@ const resources = [
     desc:'All about government.',
     bgColor:'bg-purple-600',
   },
-  // {
-  //   name: 'Downloadable Design Software',
-  //   href:'/designsoftware',
-  //   desc:'Free software for UI, photo, 3d modeling, etc. Alternatives to paid software like Photoshop.',
-  //   bgColor:'bg-green-500',
-  // },
-  // {
-  //   name: 'Design Inspiration',
-  //   href:'/designinspiration',
-  //   desc:'Here are some websites to get inspiration for design and UI.',
-  //   bgColor:'bg-blue-900',},
-  // {
-  //   name: 'Image Compression',
-  //   href:'/imagecompression',
-  //   desc:'Websites that allow you to compress large images.',
-  //   bgColor:'bg-red-500',
-  // },
-  // {
-  //   name: 'Chrome Extensions',
-  //   href:'/chromeextensions',
-  //   desc:'Useful Chrome extensions for Designers and Web-Developers.',
-  //   bgColor:'bg-teal-500',
-  // },
-  // {
-  //   name: 'Public APIs',
-  //   href:'/publicapis',
-  //   desc:'A collective list of free APIs for use in software and web development.',
-  //   bgColor:'bg-rose-500',
-  // },
-  // {
-  //   name: 'Others',
-  //   href:'/others',
-  //   desc:'Uncategorized Stuff.',
-  //   bgColor:'bg-amber-500',
-  // },
+  {
+    name: 'Health',
+    href:'/healthapi',
+    desc:'All about government health.',
+    bgColor:'bg-green-500',
+  },
+  {
+    name: 'Jobs',
+    href:'/jobsapi',
+    desc:'All about jobs.',
+    bgColor:'bg-blue-900',
+  },
+  {
+    name: 'Machine Learning',
+    href:'/machinelearningapi',
+    desc:'All about machine learning.',
+    bgColor:'bg-red-500',
+  },
+  {
+    name: 'Music',
+    href:'/musicapi',
+    desc:'All about music.',
+    bgColor:'bg-teal-500',
+  },
+  {
+    name: 'News',
+    href:'/newsapi',
+    desc:'All about news.',
+    bgColor:'bg-rose-500',
+  },
+  {
+    name: 'Open Data',
+    href:'/opendataapi',
+    desc:'All about open data.',
+    bgColor:'bg-amber-500',
+  },
+  {
+    name: 'Open Source Projects',
+    href:'/opensourceapi',
+    desc:'All about open source projects.',
+    bgColor:'bg-pink-600',
+  },
 ]
 
 export default {
