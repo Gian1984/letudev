@@ -68,7 +68,14 @@ import MachineLearningApi from "../apis/MachineLearningApi.vue"
 import MusicApi from "../apis/MusicApi.vue"
 import NewsApi from "../apis/NewsApi.vue"
 import OpenDataApi from "../apis/OpenDataApi.vue"
-import OpenSourceApi from "../apis/OpenDataApi.vue"
+import OpenSourceApi from "../apis/OpenSourceApi.vue"
+import PatentApi from "../apis/PatentApi.vue"
+import PersonalityApi from "../apis/PersonalityApi.vue"
+import PhoneApi from "../apis/PhoneApi.vue"
+import PhotographyApi from "../apis/PhotographyApi.vue"
+import ProgrammingApi from "../apis/ProgrammingApi.vue"
+import ScienceMathApi from "../apis/ScienceMath.vue"
+import SecurityApi from "../apis/SecurityApi.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -1329,6 +1336,132 @@ const router = createRouter({
           {
             property: 'og:description',
             content: 'A collective list of free APIs about open source projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/patentapi',
+      name:'patentapi',
+      component: PatentApi,
+      meta: {
+        title: 'Public APIs - Patent',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about patent projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about patent projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/personalityapi',
+      name:'personalityapi',
+      component: PersonalityApi,
+      meta: {
+        title: 'Public APIs - Personality',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about personality projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about personality projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/phoneapi',
+      name:'phoneapi',
+      component: PhoneApi,
+      meta: {
+        title: 'Public APIs - Phone',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about phone projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about phone projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/photographyapi',
+      name:'photographyapi',
+      component: PhotographyApi,
+      meta: {
+        title: 'Public APIs - Photography',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about photography projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about photography projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/programmingapi',
+      name:'programmingapi',
+      component: ProgrammingApi,
+      meta: {
+        title: 'Public APIs - Programming',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about programming projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about programming projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/sciencemathapi',
+      name:'sciencemathapi',
+      component: ScienceMathApi,
+      meta: {
+        title: 'Public APIs - Science & Math',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about science & math projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about science & math projects for use in software and web development.'
+          }
+        ]
+      },
+    },
+    {
+      path:'/securityapi',
+      name:'securityapi',
+      component: SecurityApi,
+      meta: {
+        title: 'Public APIs - Security',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A collective list of free APIs about security projects for use in software and web development.'
+          },
+          {
+            property: 'og:description',
+            content: 'A collective list of free APIs about security projects for use in software and web development.'
           }
         ]
       },

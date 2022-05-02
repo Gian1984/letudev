@@ -302,6 +302,34 @@ const projects = [
     name: 'APIs / Open Source Projects',
     href:'/opensourceapi',
   },
+  {
+    name: 'APIs / Patent',
+    href:'/patentapi',
+  },
+  {
+    name: 'APIs / Personality',
+    href:'/personalityapi',
+  },
+  {
+    name: 'APIs / Phone',
+    href:'/phoneapi',
+  },
+  {
+    name: 'APIs / Photography',
+    href:'/photographyapi',
+  },
+  {
+    name: 'APIs / Programming',
+    href:'/programmingapi',
+  },
+  {
+    name: 'APIs / Science & Math',
+    href:'/sciencemathapi',
+  },
+  {
+    name: 'APIs / Security',
+    href:'/securityapi',
+  },
 ]
 const recent = [projects[0],projects[1],projects[4],projects[6],projects[10]]
 

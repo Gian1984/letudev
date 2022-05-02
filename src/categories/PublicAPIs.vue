@@ -336,6 +336,48 @@ const resources = [
     desc:'All about open source projects.',
     bgColor:'bg-pink-600',
   },
+  {
+    name: 'Patent',
+    href:'/patentapi',
+    desc:'All about patent projects.',
+    bgColor:'bg-emerald-500',
+  },
+  {
+    name: 'Personality',
+    href:'/personalityapi',
+    desc:'All about personality.',
+    bgColor:'bg-cyan-500',
+  },
+  {
+    name: 'Phone',
+    href:'/phoneapi',
+    desc:'All about phone.',
+    bgColor:'bg-indigo-500',
+  },
+  {
+    name: 'Photography',
+    href:'/photographyapi',
+    desc:'All about photography.',
+    bgColor:'bg-orange-500',
+  },
+  {
+    name: 'Programming',
+    href:'/programmingapi',
+    desc:'All about programming.',
+    bgColor:'bg-blue-900',
+  },
+  {
+    name: 'Science & Math',
+    href:'/sciencemathapi',
+    desc:'All about science & math.',
+    bgColor:'bg-rose-500',
+  },
+  {
+    name: 'Security',
+    href:'/securityapi',
+    desc:'All about security.',
+    bgColor:'bg-green-500',
+  },
 ]
 
 export default {
