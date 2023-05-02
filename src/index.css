@@ -2,11 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-#header img{
-    filter: brightness(55%);
-}
-
-#header span{
-    letter-spacing: 1.25px;
-} 
