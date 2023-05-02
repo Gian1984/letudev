@@ -1,20 +1,19 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
 
   <header>
     <div>
-      <div class="relative">
+      <div class="relative" id="header">
         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"/>
         <div class="mx-auto">
           <div class="relative sm:overflow-hidden" style="min-height: 40vh">
             <div class="absolute inset-0">
-              <img class="h-full w-full object-cover" src="../assets/img/mesh.webp" alt="letudev_header"/>
+              <img class="h-full w-full object-cover" src="../assets/img/fiber3-min.webp" alt="letudev_header"/>
               <div class="absolute inset-0" />
             </div>
             <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                 <span class="block text-white uppercase font-Pacifico">Let  U  dev</span>
-                <span class="block text-teal-500 text-2xl">List of useful resources made for all web developers </span>
+                <span class="block text-orange-500 text-2xl">List of useful resources made for all web developers </span>
               </h1>
             </div>
           </div>

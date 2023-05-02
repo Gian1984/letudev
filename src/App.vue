@@ -283,7 +283,7 @@
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="mt-5 text-base text-gray-400 md:order-1 text-center">&copy; 2022 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-600 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
+        <p class="mt-5 text-base text-gray-400 md:order-1 text-center">&copy; 2023 <a href="https://www.gianlucatiengo.com/" target="_blank" class="text-teal-600 hover:text-teal-700"> Gianluca Tiengo</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>
